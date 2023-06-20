@@ -14,7 +14,9 @@ class Administrador
      */
     public function __construct(string $nome, string $email, int $senha)
     {
-        // TODO implement here
+        $this->nome = $nome;
+        $this->email = $email;
+        $this->senha = $senha;
     }
 
     /**
@@ -22,7 +24,7 @@ class Administrador
      */
     public function setNome(string $nome)
     {
-        // TODO implement here
+        $this->nome = $nome;
     }
 
     /**
@@ -30,8 +32,7 @@ class Administrador
      */
     public function getNome(): string
     {
-        // TODO implement here
-        return "";
+        return $this->nome;
     }
 
     /**
@@ -39,7 +40,7 @@ class Administrador
      */
     public function setEmail(string $email)
     {
-        // TODO implement here
+        $this->email = $email;
     }
 
     /**
@@ -47,8 +48,7 @@ class Administrador
      */
     public function getEmail(): string
     {
-        // TODO implement here
-        return "";
+        return $this->email;
     }
 
     /**
@@ -56,7 +56,7 @@ class Administrador
      */
     public function setSenha(int $senha)
     {
-        // TODO implement here
+        $this->senha = $senha;
     }
 
     /**
@@ -64,8 +64,7 @@ class Administrador
      */
     public function getSenha(): int
     {
-        // TODO implement here
-        return 0;
+        return $this->senha;
     }
 
 }
