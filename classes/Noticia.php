@@ -40,6 +40,7 @@ class Noticia
         $this->categorias = [];
         $this->comentarios = [];
         $this->contAcesso = 0;
+        $this->codNoticia = 0;
         
     }
 
@@ -124,6 +125,30 @@ class Noticia
     {
         
         return $this->comentarios;
+    }
+
+    public function setCodNoticia($codNoticia) 
+    {
+        $this->codNoticia = $codNoticia;
+
+    }
+
+    public function getCodNoticia()
+    {
+        return $this->codNoticia;
+
+    }
+
+    public function categorizar($categoria)
+    {
+        $this->categorias[] = $categoria;
+
+    }
+
+    public function getCategorias()
+    {
+        return $this->categorias;
+
     }
 
 }
