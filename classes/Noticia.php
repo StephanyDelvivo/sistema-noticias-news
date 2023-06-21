@@ -3,147 +3,127 @@
 declare(strict_types=1);
 
 
-/**
- * @author Stephany e os 4G
- */
 class Noticia
 {
 
-    /** @var int */
-    private int $codNoticia;
+   
+    private  $codNoticia;
 
-    /** @var string */
-    private string $titulo;
+   
+    private  $titulo;
 
-    /** @var string */
-    private string $corpoTexto;
+    
+    private  $corpoTexto;
 
-    /** @var string */
-    private string $imgNoticia;
+    
+    private  $imgNoticia;
 
-    /** @var [object Object][] */
-    private array $categorias;
+    
+    private  $categorias;
 
-    /** @var [object Object][] */
-    private array $comentarios;
+    
+    private  $comentarios;
 
-    /** @var string */
-    private string $status;
+   
+    private  $status;
 
-    /** @var int */
-    private int $contAcesso;
+   
+    private $contAcesso;
 
-    /**
-     * @param string $titulo 
-     * @param string $corpoTexto 
-     * @param string $imgNoticia 
-     * @param string $status
-     */
-    public function __construct(string $titulo, string $corpoTexto, string $imgNoticia, string $status)
+    
+    public function __construct($titulo, $corpoTexto, $imgNoticia, $status)
     {
-        // TODO implement here
+        $this->titulo = $titulo;
+        $this->corpoTexto = $corpoTexto;
+        $this->imgNoticia = $imgNoticia;
+        $this->status = $status;
+        $this->categorias = [];
+        $this->comentarios = [];
+        $this->contAcesso = 0;
+        
     }
 
-    /**
-     * @param string $titulo
-     */
-    public function setTitulo(string $titulo)
-    {
-        // TODO implement here
+    
+    public function setTitulo($titulo)
+    { 
+        $this->titulo = $titulo;
+        
     }
 
-    /**
-     * @return string
-     */
-    public function getTitulo(): string
+   
+    public function getTitulo()
     {
-        // TODO implement here
-        return "";
+        
+        return $this->titulo;
     }
 
-    /**
-     * @param string $corpoTexto
-     */
-    public function setCorpoTexto(string $corpoTexto)
+   
+    public function setCorpoTexto($corpoTexto)
     {
-        // TODO implement here
+        $this->corpoTexto = $corpoTexto;
+       
     }
 
-    /**
-     * @return string
-     */
-    public function getCorpoTexto(): string
+    
+    public function getCorpoTexto()
     {
-        // TODO implement here
-        return "";
+        
+        return $this->corpoTexto;
     }
 
-    /**
-     * @param string $imgNoticia
-     */
-    public function setImgNoticia(string $imgNoticia)
+    
+    public function setImgNoticia($imgNoticia)
     {
-        // TODO implement here
+        $this->imgNoticia = $imgNoticia;
+        
     }
 
-    /**
-     * @return string
-     */
-    public function getImgNoticia(): string
+    
+    public function getImgNoticia()
     {
-        // TODO implement here
-        return "";
+        
+        return $this->imgNoticia;
     }
 
-    /**
-     * @param string $status
-     */
-    public function setStatus(string $status)
+   
+    public function setStatus($status)
     {
-        // TODO implement here
+        $this->status = $status;
+        
     }
 
-    /**
-     * @return string
-     */
-    public function getStatus(): string
+    
+    public function getStatus()
     {
-        // TODO implement here
-        return "";
+        
+        return $this->status;
     }
 
-    /**
-     * @param int $contAcesso
-     */
-    public function setContAcesso(int $contAcesso)
+    
+    public function setContAcesso($contAcesso)
     {
-        // TODO implement here
+        $this->contAcesso = $contAcesso;
+        
     }
 
-    /**
-     * @return int
-     */
-    public function getContAcesso(): int
+    
+    public function getContAcesso()
     {
-        // TODO implement here
-        return 0;
+       
+        return $this->contAcesso;
     }
 
-    /**
-     * @param string $textoComent
-     */
-    public function comentar(string $textoComent)
+    
+    public function comentar($textoComent)
     {
-        // TODO implement here
+        $this->comentarios[] = $textoComent;
+        
     }
 
-    /**
-     * @return [object Object][]
-     */
-    public function getComentarios(): array
+    public function getComentarios()
     {
-        // TODO implement here
-        return [];
+        
+        return $this->comentarios;
     }
 
 }
