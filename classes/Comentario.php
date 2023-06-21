@@ -3,44 +3,57 @@
 declare(strict_types=1);
 
 
-/**
- * @author Stephany e os 4G
- */
+
 class Comentario
 {
 
-    /** @var [object Object] */
+    
     private Assinante $autor;
 
-    /** @var string */
+    
     private string $textoComent;
 
-    /** @var int */
+    
     private int $codComent;
 
-    /**
-     * @param string $textoComent
-     */
-    public function __construct(string $textoComent)
+    
+    public function __construct($textoComent)
     {
-        // TODO implement here
+        $this->textoComent = $textoComent;
+        $this->autor = null;
+        $this->codComent = 0;
     }
 
-    /**
-     * @param string $textoComent
-     */
-    public function setTextoComent(string $textoComent)
+    public function setAutor($autor)
     {
-        // TODO implement here
+        $this->autor = $autor;
     }
 
-    /**
-     * @return string
-     */
-    public function getTextoComent(): string
+    public function getAutor()
     {
-        // TODO implement here
-        return "";
+        return $this->autor;
+
+    }
+
+    public function setTextoComent($textoComent)
+    {
+        $this->textoComent = $textoComent;
+    }
+
+    
+    public function getTextoComent()
+    {
+        return $this->textoComent;
+    }
+
+    public function setCodComent($codComent)
+    {
+        $this->codComent = $codComent;
+    }
+
+    public function getCodComent()
+    {
+        return $this->codComent;
     }
 
 }
