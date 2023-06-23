@@ -1,22 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
-
-
 class Comentario
-{
-
-    
-    private Assinante $autor;
-
-    
-    private string $textoComent;
-
-    
+{   
+    private Assinante $autor; 
+    private string $textoComent;  
     private int $codComent;
-
-    
+ 
     public function __construct($textoComent)
     {
         $this->textoComent = $textoComent;
@@ -32,7 +21,6 @@ class Comentario
     public function getAutor()
     {
         return $this->autor;
-
     }
 
     public function setTextoComent($textoComent)
@@ -40,7 +28,6 @@ class Comentario
         $this->textoComent = $textoComent;
     }
 
-    
     public function getTextoComent()
     {
         return $this->textoComent;

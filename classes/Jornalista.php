@@ -1,173 +1,89 @@
 <?php
 
-declare(strict_types=1);
-
-
-/**
- * @author Stephany e os 4G
- */
 class Jornalista
-{
+{ 
+    private $nome;
+    private $email;
+    private $senha;
+    private $cpf;
+    private $historico;
+    private $noticias;
+    private $statusJorn;
 
-    /** @var string */
-    private string $nome;
-
-    /** @var string */
-    private string $email;
-
-    /** @var int */
-    private int $senha;
-
-    /** @var int */
-    private int $cpf;
-
-    /** @var string */
-    private string $historico;
-
-    /** @var [object Object][] */
-    private array $noticias;
-
-    /** @var string */
-    private string $statusJorn;
-
-    /**
-     * @param string $nome 
-     * @param string $email 
-     * @param int $senha 
-     * @param int $cpf 
-     * @param string $historico 
-     * @param string $statusJorn
-     */
-    public function __construct(string $nome, string $email, int $senha, int $cpf, string $historico, string $statusJorn)
+     function __construct($nome, $email, $senha, $cpf, $historico, $statusJorn)
     {
-        // TODO implement here
+        $this->nome = $nome;
+        $this->email = $email;
+        $this->senha = $senha;
+        $this->cpf = $cpf;
+        $this->historico = $historico;
+        $this->noticias = [];
+        $this->statusJorn = $statusJorn;
     }
 
-    /**
-     * @param [object Object] $noticia
-     */
-    public function enviarNoticia([object Object] $noticia)
+    // function enviarNoticia($noticia)
+    // {
+            //talvez continue ou não
+    // }
+
+    function setNome($nome)
     {
-        // TODO implement here
+        $this->nome = $nome;
     }
 
-    /**
-     * @param string $nome
-     */
-    public function setNome(string $nome)
+    function getNome()
     {
-        // TODO implement here
+        return $this->nome;
     }
 
-    /**
-     * @return string
-     */
-    public function getNome(): string
+    function setEmail($email)
     {
-        // TODO implement here
-        return "";
+        $this->email = $email;
     }
 
-    /**
-     * @param string $email
-     */
-    public function setEmail(string $email)
+    function getEmail()
     {
-        // TODO implement here
+        return $this->email;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail(): string
+    function setSenha($senha)
     {
-        // TODO implement here
-        return "";
+        $this->senha = $senha;
     }
 
-    /**
-     * @param int $senha
-     */
-    public function setSenha(int $senha)
-    {
-        // TODO implement here
+    function getSenha()
+    {      
+        return $this->senha;
     }
 
-    /**
-     * @return int
-     */
-    public function getSenha(): int
+    function setCpf($cpf)
     {
-        // TODO implement here
-        return 0;
+        $this->cpf = $cpf;
     }
 
-    /**
-     * @param int $cpf
-     */
-    public function setCpf(int $cpf)
+    function getCpf()
     {
-        // TODO implement here
+        return $this->cpf;
     }
 
-    /**
-     * @return int
-     */
-    public function getCpf(): int
+    function setStatusJorn($statusJorn)
     {
-        // TODO implement here
-        return 0;
+        $this->statusJorn = $statusJorn;
     }
 
-    /**
-     * @param string $statusJorn
-     */
-    public function setStatusJorn(string $statusJorn)
-    {
-        // TODO implement here
+    function getStatusJorn()
+    {       
+        return $this->statusJorn;
     }
 
-    /**
-     * @return string
-     */
-    public function getStatusJorn(): string
+    function setHistorico($historico)
     {
-        // TODO implement here
-        return "";
+        $this->historico = $historico;
     }
 
-    /**
-     * @param string $historico
-     */
-    public function setHistorico(string $historico)
-    {
-        // TODO implement here
-    }
-
-    /**
-     * @return string
-     */
-    public function getHistorico(): string
-    {
-        // TODO implement here
-        return "";
-    }
-
-    /**
-     * @param string $qualificacao
-     */
-    public function setQualificacao(string $qualificacao)
-    {
-        // TODO implement here
-    }
-
-    /**
-     * @return string
-     */
-    public function getQualificacao(): string
-    {
-        // TODO implement here
-        return "";
+    function getHistorico()
+    {    
+        return $this->historico;
     }
 
 }

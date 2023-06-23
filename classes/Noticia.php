@@ -1,36 +1,16 @@
 <?php
 
-declare(strict_types=1);
-
-
 class Noticia
 {
-
-   
-    private  $codNoticia;
-
-   
-    private  $titulo;
-
-    
-    private  $corpoTexto;
-
-    
-    private  $imgNoticia;
-
-    
-    private  $categorias;
-
-    
-    private  $comentarios;
-
-   
-    private  $status;
-
-   
+    private $codNoticia;
+    private $titulo;
+    private $corpoTexto;
+    private $imgNoticia;
+    private $categorias;
+    private $comentarios;
+    private $status;
     private $contAcesso;
-
-    
+ 
     public function __construct($titulo, $corpoTexto, $imgNoticia, $status)
     {
         $this->titulo = $titulo;
@@ -44,111 +24,84 @@ class Noticia
         
     }
 
-    
-    public function setTitulo($titulo)
+    function setTitulo($titulo)
     { 
-        $this->titulo = $titulo;
-        
+        $this->titulo = $titulo; 
     }
-
-   
-    public function getTitulo()
-    {
-        
+  
+    function getTitulo()
+    { 
         return $this->titulo;
     }
-
    
-    public function setCorpoTexto($corpoTexto)
+    function setCorpoTexto($corpoTexto)
     {
         $this->corpoTexto = $corpoTexto;
-       
     }
 
-    
-    public function getCorpoTexto()
-    {
-        
+    function getCorpoTexto()
+    {  
         return $this->corpoTexto;
     }
-
     
-    public function setImgNoticia($imgNoticia)
+    function setImgNoticia($imgNoticia)
     {
-        $this->imgNoticia = $imgNoticia;
-        
+        $this->imgNoticia = $imgNoticia;   
     }
-
-    
-    public function getImgNoticia()
-    {
-        
+ 
+    function getImgNoticia()
+    {  
         return $this->imgNoticia;
     }
 
-   
-    public function setStatus($status)
+    function setStatus($status)
     {
-        $this->status = $status;
-        
+        $this->status = $status; 
     }
 
-    
-    public function getStatus()
-    {
-        
+    function getStatus()
+    { 
         return $this->status;
     }
 
-    
-    public function setContAcesso($contAcesso)
+    function setContAcesso($contAcesso)
     {
-        $this->contAcesso = $contAcesso;
-        
+        $this->contAcesso = $contAcesso; 
     }
-
-    
-    public function getContAcesso()
-    {
-       
+  
+    function getContAcesso()
+    { 
         return $this->contAcesso;
     }
 
-    
-    public function comentar($textoComent)
+    function comentar($textoComent)
     {
-        $this->comentarios[] = $textoComent;
-        
+        $this->comentarios[] = $textoComent; 
     }
 
-    public function getComentarios()
-    {
-        
+    function getComentarios()
+    {  
         return $this->comentarios;
     }
 
-    public function setCodNoticia($codNoticia) 
+    function setCodNoticia($codNoticia) 
     {
         $this->codNoticia = $codNoticia;
-
     }
 
-    public function getCodNoticia()
+    function getCodNoticia()
     {
         return $this->codNoticia;
-
     }
 
-    public function categorizar($categoria)
+    function categorizar($categoria)
     {
         $this->categorias[] = $categoria;
-
     }
 
-    public function getCategorias()
+    function getCategorias()
     {
         return $this->categorias;
-
     }
 
 }
