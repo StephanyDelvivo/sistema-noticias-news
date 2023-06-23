@@ -3,41 +3,43 @@
 declare(strict_types=1);
 
 
-/**
- * @author Stephany e os 4G
- */
+
 class Categoria
 {
 
-    /** @var string */
+    
     private string $nome;
 
-    /** @var int */
+   
     private int $codCateg;
 
-    /**
-     * @param string $nome
-     */
+    
     public function __construct(string $nome)
     {
-        // TODO implement here
+        $this->nome = $nome;
+        $this->codCateg = 0;
     }
 
-    /**
-     * @param string $nome
-     */
+    
     public function setNome(string $nome)
     {
-        // TODO implement here
+        $this->nome = $nome;
     }
 
-    /**
-     * @return string
-     */
-    public function getNome(): string
+    
+    public function getNome()
     {
-        // TODO implement here
-        return "";
+        return $this->nome;
+    }
+
+    public function setcodCateg($codCateg)
+    {
+        $this->codCateg = $codCateg;
+    }
+
+    public function getcodCateg()
+    {
+        return $this->codCateg;
     }
 
 }
