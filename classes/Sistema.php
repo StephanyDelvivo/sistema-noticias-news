@@ -28,7 +28,7 @@ class Sistema{
 
 
     function aprovarJorn($jornalista){
-        // TIRAR DÚVIDA COM O GRUPO
+        // TIRAR DÚVIDA COM O GRUPO E O PROFESSOR
     }
 
     public function deletarJorn($cpf)
