@@ -1,168 +1,200 @@
 <?php
 
-declare(strict_types=1);
+class Sistema{
 
+    public $noticias = [];
+    public $admin = [];
+    public $jornalistas = [];
+    public $assinantes = [];
+    public $categorias = [];
+    public $comentarios = [];
 
-/**
- * @author Stephany e os 4G
- */
-class Sistema
-{
-
-    /** @var Noticia[] */
-    private array $noticia;
-
-    /** @var Administrador[] */
-    private array $admin;
-
-    /** @var Jornalista [*] */
-    private Jornalista [*] $jornalista;
-
-    /** @var Assinante [*] */
-    private Assinante [*] $assinante;
-
-    /** @var [object Object][] */
-    private array $categoria;
-
-    /** @var Comentario[] */
-    private array $comentario;
-
-    /**
-     * 
-     */
-    public function __construct()
+    function __construct()
     {
-        // TODO implement here
+    
+        if (file_exists(PATH . 'sistema.save')) {
+        $dados = file_get_contents(PATH.'sistema.save');
+        $sistema = unserialize($dados);
+        
+        }
     }
 
-    /**
-     * @param [object Object] $jornalista
-     */
-    public function aprovarJorn([object Object] $jornalista)
+
+    function __destruct()
     {
-        // TODO implement here
+        $serializado = serialize($this);
+        file_put_contents(PATH . 'banco.save', $serializado);
     }
 
-    /**
-     * @param int $cpf
-     */
-    public function deletarJorn(int $cpf)
-    {
-        // TODO implement here
+
+    function aprovarJorn($jornalista){
+        // TIRAR DÚVIDA COM O GRUPO E O PROFESSOR
     }
 
-    /**
-     * @param int $cpf 
-     * @return [object Object]
-     */
-    public function buscarJorn(int $cpf): [object Object]
+    public function deletarJorn($cpf)
     {
-        // TODO implement here
-        return null;
+        $remover = null;
+        foreach ($this->jornalistas as $ind => $jornalista) {
+            if ($jornalista->getCpf() == $cpf) {
+                $remover = $ind;
+            }
+        }
+        var_dump($remover);
+        if ($remover !== null) {
+            unset($this->jornalistas[$remover]);
+        }
+
     }
 
-    /**
-     * @param [object Object] $noticia
-     */
-    public function aprovarNotic([object Object] $noticia)
+    public function buscarJorn($cpf)
     {
-        // TODO implement here
+        foreach ($this->jornalistas as $jornalista) {
+            if ($jornalista->getCpf() == $cpf) {
+                return $jornalista;
+            }
+        }
+        return null;  
     }
 
-    /**
-     * @param int $codNoticia
-     */
-    public function deletarNotic(int $codNoticia)
+
+
+    public function aprovarNotic ($noticia)
     {
-        // TODO implement here
+        // TIRAR DÚVIDA COM O GRUPO
     }
 
-    /**
-     * @param int $codNoticia 
-     * @return [object Object]
-     */
-    public function buscarNotic(int $codNoticia): [object Object]
+
+    public function deletarNotic($codNoticia)
     {
-        // TODO implement here
-        return null;
+        $remover = null;
+        foreach ($this->noticias as $ind => $noticia) {
+            if ($noticia->getCpf() == $cpf) {
+                $remover = $ind;
+            }
+        }
+        var_dump($remover);
+        if ($remover !== null) {
+            unset($this->noticia[$remover]);
+        }
     }
 
-    /**
-     * @param [object Object] $assinante
-     */
-    public function aprovarAss([object Object] $assinante)
+
+    public function buscarNotic($codNoticia) 
     {
-        // TODO implement here
+        foreach ($this->codNoticia as $codNoticia) {
+            if ($codNoticia->getCpf() == $cpf) {
+                return $codNoticia;
+            }
+        }
+        return null; 
     }
 
-    /**
-     * @param int $cpf
-     */
-    public function deletarAss(int $cpf)
+
+    public function aprovarAss ($assinante)
     {
-        // TODO implement here
+        // TIRAR DÚVIDA COM O GRUPO
     }
 
-    /**
-     * @param int $cpf 
-     * @return [object Object]
-     */
-    public function buscarAss(int $cpf): [object Object]
+
+    public function deletarAss($cpf)
     {
-        // TODO implement here
-        return null;
+        $remover = null;
+        foreach ($this->assinantes as $ind => $assinante) {
+            if ($assinante->getCpf() == $cpf) {
+                $remover = $ind;
+            }
+        }
+        var_dump($remover);
+        if ($remover !== null) {
+            unset($this->assinantes[$remover]);
+        }
     }
 
-    /**
-     * @param [object Object] $categoria
-     */
-    public function cadastrarCat([object Object] $categoria)
+
+    public function buscarAss($cpf)
     {
-        // TODO implement here
+        foreach ($this->assinantes as $assinante) {
+            if ($assinante->getCpf() == $cpf) {
+                return $assinante;
+            }
+        }
+        return null; 
     }
 
-    /**
-     * @param int $codCateg
-     */
-    public function deletarCat(int $codCateg)
+
+    public function cadastrarCat($categoria)
     {
-        // TODO implement here
+        $aux = $this->buscarCat($categoria->getCateg());
+        if ($aux == null) {
+            $this->categorias[] = $categoria;
+        }
     }
 
-    /**
-     * @param int $codCateg 
-     * @return [object Object]
-     */
-    public function buscarCat(int $codCateg): [object Object]
+
+    public function deletarCat($codCateg)
     {
-        // TODO implement here
-        return null;
+        $remover = null;
+        foreach ($this->categorias as $ind => $categoria) {
+            if ($categoria->getCateg() == $codCateg) {
+                $remover = $ind;
+            }
+        }
+        var_dump($remover);
+        if ($remover !== null) {
+            unset($this->categorias[$remover]);
+        }
     }
 
-    /**
-     * @param [object Object] $comentario
-     */
-    public function cadastrarComent([object Object] $comentario)
+
+    public function buscarCat ($codCateg)
     {
-        // TODO implement here
+        
+        foreach ($this->categorias as $categoria) {
+            if ($categoria->getCpf() == $cpf) {
+                return $categoria;
+            }
+        }
+        return null; 
     }
 
-    /**
-     * @param int $codComent
-     */
-    public function deletarComent(int $codComent)
+
+    public function cadastrarComent($comentario)
     {
-        // TODO implement here
+        $aux = $this->buscarComent($comentario->getCpf());
+        if ($aux == null) {
+            $this->comentarios[] = $comentario;
+        }
     }
 
-    /**
-     * @param int $codComent 
-     * @return [object Object]
-     */
-    public function buscarComent(int $codComent): [object Object]
+
+    public function deletarComent($codComent)
     {
-        // TODO implement here
-        return null;
+        $remover = null;
+        foreach ($this->comentarios as $ind => $comentario) {
+            if ($comentario->getCodComent() == $codComent) {
+                $remover = $ind;
+            }
+        }
+        var_dump($remover);
+        if ($remover !== null) {
+            unset($this->comentarios[$remover]);
+        }
+    }
+
+
+    public function buscarComent($codComent)
+    {
+        foreach ($this->comentarios as $comentario) {
+            if ($comentario->getCodComent() == $codComent) {
+                return $jornalista;
+            }
+        }
+        return null; 
     }
 
 }
+
+
+
+
+    
