@@ -1,7 +1,11 @@
 <?php
+define('DS', DIRECTORY_SEPARATOR);
+define('ROOT', $_SERVER['DOCUMENT_ROOT']);
+define('SISTEMA', 'sistema-noticias-news');
+define('PATH', ROOT . DS . SISTEMA . DS);
 
-class Sistema{
-
+class Sistema
+{
     public $noticias = [];
     public $admin = [];
     public $jornalistas = [];
@@ -11,27 +15,23 @@ class Sistema{
 
     function __construct()
     {
-    
         if (file_exists(PATH . 'sistema.save')) {
         $dados = file_get_contents(PATH.'sistema.save');
         $sistema = unserialize($dados);
-        
         }
     }
-
 
     function __destruct()
     {
         $serializado = serialize($this);
-        file_put_contents(PATH . 'banco.save', $serializado);
+        file_put_contents(PATH . 'sistema.save', $serializado);
     }
-
 
     function aprovarJorn($jornalista){
         // TIRAR DÚVIDA COM O GRUPO E O PROFESSOR
     }
 
-    public function deletarJorn($cpf)
+    function deletarJorn($cpf)
     {
         $remover = null;
         foreach ($this->jornalistas as $ind => $jornalista) {
@@ -46,7 +46,7 @@ class Sistema{
 
     }
 
-    public function buscarJorn($cpf)
+    function buscarJorn($cpf)
     {
         foreach ($this->jornalistas as $jornalista) {
             if ($jornalista->getCpf() == $cpf) {
@@ -56,47 +56,41 @@ class Sistema{
         return null;  
     }
 
-
-
-    public function aprovarNotic ($noticia)
+    function aprovarNotic ($noticia)
     {
         // TIRAR DÚVIDA COM O GRUPO
     }
 
-
-    public function deletarNotic($codNoticia)
+    function deletarNotic($codNoticia)
     {
         $remover = null;
         foreach ($this->noticias as $ind => $noticia) {
-            if ($noticia->getCpf() == $cpf) {
+            if ($noticia->getCodNoticia() == $codNoticia) {
                 $remover = $ind;
             }
         }
         var_dump($remover);
         if ($remover !== null) {
-            unset($this->noticia[$remover]);
+            unset($this->noticias[$remover]);
         }
     }
 
-
-    public function buscarNotic($codNoticia) 
+    function buscarNotic($codNoticia) 
     {
-        foreach ($this->codNoticia as $codNoticia) {
-            if ($codNoticia->getCpf() == $cpf) {
-                return $codNoticia;
+        foreach ($this->noticias as $noticia) {
+            if ($noticia->getCodNoticia() == $codNoticia) {
+                return $noticia;
             }
         }
         return null; 
     }
 
-
-    public function aprovarAss ($assinante)
+    function aprovarAss ($assinante)
     {
         // TIRAR DÚVIDA COM O GRUPO
     }
 
-
-    public function deletarAss($cpf)
+    function deletarAss($cpf)
     {
         $remover = null;
         foreach ($this->assinantes as $ind => $assinante) {
@@ -110,8 +104,7 @@ class Sistema{
         }
     }
 
-
-    public function buscarAss($cpf)
+    function buscarAss($cpf)
     {
         foreach ($this->assinantes as $assinante) {
             if ($assinante->getCpf() == $cpf) {
@@ -121,8 +114,7 @@ class Sistema{
         return null; 
     }
 
-
-    public function cadastrarCat($categoria)
+    function cadastrarCat($categoria)
     {
         $aux = $this->buscarCat($categoria->getCateg());
         if ($aux == null) {
@@ -130,8 +122,7 @@ class Sistema{
         }
     }
 
-
-    public function deletarCat($codCateg)
+    function deletarCat($codCateg)
     {
         $remover = null;
         foreach ($this->categorias as $ind => $categoria) {
@@ -145,29 +136,26 @@ class Sistema{
         }
     }
 
-
-    public function buscarCat ($codCateg)
+    function buscarCat ($codCateg)
     {
         
         foreach ($this->categorias as $categoria) {
-            if ($categoria->getCpf() == $cpf) {
+            if ($categoria->getCodCateg() == $codCateg) {
                 return $categoria;
             }
         }
         return null; 
     }
 
-
-    public function cadastrarComent($comentario)
+    function cadastrarComent($comentario)
     {
-        $aux = $this->buscarComent($comentario->getCpf());
+        $aux = $this->buscarComent($comentario->getCodComent());
         if ($aux == null) {
             $this->comentarios[] = $comentario;
         }
     }
 
-
-    public function deletarComent($codComent)
+    function deletarComent($codComent)
     {
         $remover = null;
         foreach ($this->comentarios as $ind => $comentario) {
@@ -181,12 +169,11 @@ class Sistema{
         }
     }
 
-
-    public function buscarComent($codComent)
+    function buscarComent($codComent)
     {
         foreach ($this->comentarios as $comentario) {
             if ($comentario->getCodComent() == $codComent) {
-                return $jornalista;
+                return $comentario;
             }
         }
         return null; 

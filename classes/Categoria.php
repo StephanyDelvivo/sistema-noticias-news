@@ -5,28 +5,28 @@ class Categoria
     private $nome; 
     private $codCateg;
 
-    public function __construct($nome)
+    function __construct($nome)
     {
         $this->nome = $nome;
         $this->codCateg = 0;
     }
 
-    public function setNome($nome)
+    function setNome($nome)
     {
         $this->nome = $nome;
     }
 
-    public function getNome()
+    function getNome()
     {
         return $this->nome;
     }
 
-    public function setcodCateg($codCateg)
+    function setcodCateg($codCateg)
     {
         $this->codCateg = $codCateg;
     }
 
-    public function getcodCateg()
+    function getcodCateg()
     {
         return $this->codCateg;
     }

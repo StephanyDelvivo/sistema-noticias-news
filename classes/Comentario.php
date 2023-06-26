@@ -6,39 +6,39 @@ class Comentario
     private string $textoComent;  
     private int $codComent;
  
-    public function __construct($textoComent)
+    function __construct($textoComent)
     {
         $this->textoComent = $textoComent;
         $this->autor = null;
         $this->codComent = 0;
     }
 
-    public function setAutor($autor)
+    function setAutor($autor)
     {
         $this->autor = $autor;
     }
 
-    public function getAutor()
+    function getAutor()
     {
         return $this->autor;
     }
 
-    public function setTextoComent($textoComent)
+    function setTextoComent($textoComent)
     {
         $this->textoComent = $textoComent;
     }
 
-    public function getTextoComent()
+    function getTextoComent()
     {
         return $this->textoComent;
     }
 
-    public function setCodComent($codComent)
+    function setCodComent($codComent)
     {
         $this->codComent = $codComent;
     }
 
-    public function getCodComent()
+    function getCodComent()
     {
         return $this->codComent;
     }
