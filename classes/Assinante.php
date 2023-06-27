@@ -1,124 +1,78 @@
 <?php
-
-declare(strict_types=1);
-
-
-/**
- * @author Stephany e os 4G
- */
 class Assinante
 {
+    private $nome;
 
-    /** @var string */
-    private string $nome;
+    private $email;
 
-    /** @var string */
-    private string $email;
+    private  $senha;
 
-    /** @var int */
-    private int $senha;
+    private  $cpf;
 
-    /** @var int */
-    private int $cpf;
+    private  $numCartao;
 
-    /** @var int */
-    private int $numCartao;
-
-    /**
-     * @param string $nome 
-     * @param string $email 
-     * @param int $senha 
-     * @param int $cpf 
-     * @param int $numCartao
-     */
-    public function __construct(string $nome, string $email, int $senha, int $cpf, int $numCartao)
+    public function __construct( $nome,  $email,  $senha,  $cpf,  $numCartao)
     {
-        // TODO implement here
+        $this->nome = $nome;
+        $this->email = $email;
+        $this->senha = $senha;
+        $this->cpf = $cpf;
+        $this->numCartao = $numCartao;
     }
 
-    /**
-     * @param string $nome
-     */
-    public function setNome(string $nome)
+    public function setNome($nome)
     {
-        // TODO implement here
+        $this->nome = $nome;
     }
 
-    /**
-     * @return string
-     */
-    public function getNome(): string
+    public function getNome() 
     {
-        // TODO implement here
-        return "";
+        return $this->nome;
     }
 
-    /**
-     * @param string $email
-     */
-    public function setEmail(string $email)
+    public function setEmail($email)
     {
-        // TODO implement here
+        $this->email = $email;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail(): string
+    public function getEmail()
     {
-        // TODO implement here
-        return "";
+
+        return $this->email;
     }
 
-    /**
-     * @param int $senha
-     */
-    public function setSenha(int $senha)
+  
+    public function setSenha($senha)
     {
-        // TODO implement here
+        $this->senha = $senha;
     }
 
-    /**
-     * @return int
-     */
-    public function getSenha(): int
+    public function getSenha()
     {
-        // TODO implement here
-        return 0;
+
+        return $this->senha;
     }
 
-    /**
-     * @param int $cpf
-     */
-    public function setCpf(int $cpf)
+    public function setCpf($cpf)
     {
-        // TODO implement here
+        $this->cpf = $cpf;
     }
 
-    /**
-     * @return int
-     */
-    public function getCpf(): int
+    public function getCpf()
     {
-        // TODO implement here
-        return 0;
+
+        return $this->cpf;
     }
 
-    /**
-     * @param int $numCartao
-     */
-    public function setNumCartao(int $numCartao)
+    public function setNumCartao($numCartao)
     {
-        // TODO implement here
+        $this->setNumCartao = $numCartao
     }
 
-    /**
-     * @return int
-     */
-    public function getNumCartao(): int
+    public function getNumCartao()
     {
-        // TODO implement here
-        return 0;
+
+        return $this->numCartao;
     }
 
 }
