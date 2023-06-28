@@ -6,12 +6,12 @@ define('PATH', ROOT . DS . SISTEMA . DS);
 
 class Sistema
 {
-    public $noticias = [];
-    public $admin = [];
-    public $jornalistas = [];
-    public $assinantes = [];
-    public $categorias = [];
-    public $comentarios = [];
+    private $noticias = [];
+    private $admin = [];
+    private $jornalistas = [];
+    private $assinantes = [];
+    private $categorias = [];
+    private $comentarios = [];
 
     function __construct()
     {
@@ -27,11 +27,17 @@ class Sistema
         file_put_contents(PATH . 'sistema.save', $serializado);
     }
 
-    function aprovarJorn($jornalista){
-        // TIRAR DÚVIDA COM O GRUPO E O PROFESSOR
+    function AprovarJorn($jornalista){
+      
+        $jornalista->setStatusJorn('Aprovado');
     }
 
-    function deletarJorn($cpf)
+    function ReprovarJorn($jornalista){
+      
+        $jornalista->setStatusJorn('Reprovado');
+    }
+
+    function DeletarJorn($cpf)
     {
         $remover = null;
         foreach ($this->jornalistas as $ind => $jornalista) {
@@ -56,10 +62,7 @@ class Sistema
         return null;  
     }
 
-    function aprovarNotic ($noticia)
-    {
-        // TIRAR DÚVIDA COM O GRUPO
-    }
+   
 
     function deletarNotic($codNoticia)
     {
@@ -85,9 +88,14 @@ class Sistema
         return null; 
     }
 
-    function aprovarAss ($assinante)
-    {
-        // TIRAR DÚVIDA COM O GRUPO
+    function AprovarAss($assinante){
+      
+        $assinante->setStatusAss('Aprovado');
+    }
+
+    function ReprovarAss($assinante){
+      
+        $assinante->setStatusAss('Reprovado');
     }
 
     function deletarAss($cpf)
