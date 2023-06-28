@@ -11,6 +11,8 @@ class Assinante
 
     private  $numCartao;
 
+    private $statusAss;
+
     public function __construct( $nome,  $email,  $senha,  $cpf,  $numCartao)
     {
         $this->nome = $nome;
@@ -66,13 +68,24 @@ class Assinante
 
     public function setNumCartao($numCartao)
     {
-        $this->setNumCartao = $numCartao
+        $this->numCartao = $numCartao;
     }
 
     public function getNumCartao()
     {
 
         return $this->numCartao;
+    }
+
+    public function setStatusAss($statusAss)
+    {
+        $this->statusAss = $statusAss;
+    }
+
+    public function getStatusAss($statusAss)
+    {
+
+        return $this->$statusAss;
     }
 
 }
