@@ -8,10 +8,12 @@
     <title>Notícias News</title>
 </head>
 <body>
-    <div id="navBar">
-        <h1>Notícias News</h1>
-        <a href="./telas/login.php">Logar</a>
-        <a href="">Categorias</a>
-    </div>
+    <h1>Login</h1>
+    <form action="">
+        <label>Email: <input type="email" name="email" id="email"></label><br>
+        <label>Senha: <input type="password" name="senha" id="senha"></label><br>
+        <input type="submit" value="Entrar">
+    </form>
+    
 </body>
 </html>

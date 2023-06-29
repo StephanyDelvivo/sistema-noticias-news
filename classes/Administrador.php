@@ -4,7 +4,7 @@ class Administrador
 {
     private $nome;
     private $email;
-    private int $senha;
+    private $senha;
 
     function __construct($nome, $email, $senha)
     {

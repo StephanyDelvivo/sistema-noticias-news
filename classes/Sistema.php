@@ -28,12 +28,10 @@ class Sistema
     }
 
     function AprovarJorn($jornalista){
-      
         $jornalista->setStatusJorn('Aprovado');
     }
 
     function ReprovarJorn($jornalista){
-      
         $jornalista->setStatusJorn('Reprovado');
     }
 
@@ -61,8 +59,6 @@ class Sistema
         }
         return null;  
     }
-
-   
 
     function deletarNotic($codNoticia)
     {

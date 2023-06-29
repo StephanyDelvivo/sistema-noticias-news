@@ -1,0 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#navBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

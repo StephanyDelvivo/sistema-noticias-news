@@ -2,18 +2,13 @@
 class Assinante
 {
     private $nome;
-
     private $email;
-
-    private  $senha;
-
-    private  $cpf;
-
-    private  $numCartao;
-
+    private $senha;
+    private $cpf;
+    private $numCartao;
     private $statusAss;
 
-    public function __construct( $nome,  $email,  $senha,  $cpf,  $numCartao)
+    function __construct($nome, $email, $senha, $cpf, $numCartao)
     {
         $this->nome = $nome;
         $this->email = $email;
@@ -22,69 +17,63 @@ class Assinante
         $this->numCartao = $numCartao;
     }
 
-    public function setNome($nome)
+    function setNome($nome)
     {
         $this->nome = $nome;
     }
 
-    public function getNome() 
+    function getNome() 
     {
         return $this->nome;
     }
 
-    public function setEmail($email)
+    function setEmail($email)
     {
         $this->email = $email;
     }
 
-    public function getEmail()
+    function getEmail()
     {
-
         return $this->email;
     }
 
-  
-    public function setSenha($senha)
+    function setSenha($senha)
     {
         $this->senha = $senha;
     }
 
-    public function getSenha()
+    function getSenha()
     {
-
         return $this->senha;
     }
 
-    public function setCpf($cpf)
+    function setCpf($cpf)
     {
         $this->cpf = $cpf;
     }
 
-    public function getCpf()
+    function getCpf()
     {
-
         return $this->cpf;
     }
 
-    public function setNumCartao($numCartao)
+    function setNumCartao($numCartao)
     {
         $this->numCartao = $numCartao;
     }
 
-    public function getNumCartao()
+    function getNumCartao()
     {
-
         return $this->numCartao;
     }
 
-    public function setStatusAss($statusAss)
+    function setStatusAss($statusAss)
     {
         $this->statusAss = $statusAss;
     }
 
-    public function getStatusAss($statusAss)
+    function getStatusAss($statusAss)
     {
-
         return $this->$statusAss;
     }
 
