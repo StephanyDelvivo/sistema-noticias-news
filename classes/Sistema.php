@@ -27,8 +27,19 @@ class Sistema
         file_put_contents(PATH . 'sistema.save', $serializado);
     }
 
-    function AprovarJorn($jornalista){
-        $jornalista->setStatusJorn('Aprovado');
+    function getJorn(){
+        return $this->jornalistas = [];
+    }
+
+    function cadastrarJorn($jornalista){
+        $aux = $this->buscarJorn($jornalista->getCpf());
+        if($aux == null){
+            $this->jornalistas[] = $jornalista;
+        }
+    }
+
+    function aprovarJorn($jornalista){
+            $jornalista->setStatusJorn('Aprovado');
     }
 
     function ReprovarJorn($jornalista){
@@ -84,13 +95,13 @@ class Sistema
         return null; 
     }
 
-    function AprovarAss($assinante){
-      
+    function AprovarAss($assinante)
+    {
         $assinante->setStatusAss('Aprovado');
     }
 
-    function ReprovarAss($assinante){
-      
+    function ReprovarAss($assinante)
+    {
         $assinante->setStatusAss('Reprovado');
     }
 
