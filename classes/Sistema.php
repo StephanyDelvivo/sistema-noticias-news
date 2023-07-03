@@ -28,7 +28,7 @@ class Sistema
     }
 
     function getJorn(){
-        return $this->jornalistas = [];
+        return $this->jornalistas;
     }
 
     function cadastrarJorn($jornalista){
@@ -71,6 +71,22 @@ class Sistema
         return null;  
     }
 
+    
+    function getNotic(){
+        return $this->noticias;
+    }
+
+    function cadastrarNotic($noticia){
+        $aux = $this->buscarNotic($noticia->getCodNotic());
+        if($aux == null){
+            $this->noticias[] = $noticia;
+        }
+    }
+
+    function aprovarNotic($noticia){
+            $noticia->setStatusNotic('Aprovada');
+    }
+
     function deletarNotic($codNoticia)
     {
         $remover = null;
@@ -85,6 +101,10 @@ class Sistema
         }
     }
 
+    function reprovarNotic($noticia){
+        $noticia->setStatusNotic('Reprovada');
+    }
+
     function buscarNotic($codNoticia) 
     {
         foreach ($this->noticias as $noticia) {
@@ -93,6 +113,18 @@ class Sistema
             }
         }
         return null; 
+    }
+
+    
+    function getAss(){
+        return $this->assinantes;
+    }
+
+    function cadastrarAss($assinante){
+        $aux = $this->buscarAss($assinante->getCpf());
+        if($aux == null){
+            $this->assinantes[] = $assinante;
+        }
     }
 
     function AprovarAss($assinante)
@@ -129,6 +161,11 @@ class Sistema
         return null; 
     }
 
+
+    function getCat(){
+        return $this->categorias;
+    }
+
     function cadastrarCat($categoria)
     {
         $aux = $this->buscarCat($categoria->getCateg());
@@ -160,6 +197,11 @@ class Sistema
             }
         }
         return null; 
+    }
+
+
+    function getComent(){
+        return $this->comentarios;
     }
 
     function cadastrarComent($comentario)

@@ -3,14 +3,14 @@
 class Jornalista
 { 
     private $nome;
+    private $cpf;
     private $email;
     private $senha;
-    private $cpf;
     private $historico;
     private $noticias;
     private $statusJorn;
 
-     function __construct($nome, $email, $senha, $cpf, $historico, $statusJorn)
+     function __construct($nome, $cpf, $email, $senha, $historico)
     {
         $this->nome = $nome;
         $this->email = $email;
@@ -18,7 +18,7 @@ class Jornalista
         $this->cpf = $cpf;
         $this->historico = $historico;
         $this->noticias = [];
-        $this->statusJorn = $statusJorn;
+        $this->statusJorn = NULL;
     }
 
     // function enviarNoticia($noticia)

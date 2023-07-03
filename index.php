@@ -10,8 +10,16 @@
 <body>
     <div id="navBar">
         <h1>Notícias News</h1>
-        <a href="./telas/login.php">Logar</a>
+        <a href="./telas/formLogin.php">Logar</a>
         <a href="">Categorias</a>
     </div>
+    <?php 
+        //dando erro na hora de cadastrar jornalista: não cadastra ele
+        //verificar em sala
+        require_once './classes/Sistema.php';
+        $sistema = new Sistema;
+        $jornalistas = $sistema->getJorn();
+        var_dump($jornalistas);
+    ?>
 </body>
 </html>

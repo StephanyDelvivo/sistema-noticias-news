@@ -54,12 +54,12 @@ class Noticia
         return $this->imgNoticia;
     }
 
-    function setStatus($status)
+    function setStatusNotic($status)
     {
         $this->status = $status; 
     }
 
-    function getStatus()
+    function getStatusNotic()
     { 
         return $this->status;
     }

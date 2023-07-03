@@ -13,6 +13,7 @@
         <label>Email: <input type="email" name="email" id="email"></label><br>
         <label>Senha: <input type="password" name="senha" id="senha"></label><br>
         <input type="submit" value="Entrar">
+        <p>Ainda não é cadastrado ? <a href="./formAssinante.php">Cadastre-se!</a></p>
     </form>
     
 </body>
