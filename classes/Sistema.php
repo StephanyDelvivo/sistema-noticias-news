@@ -18,6 +18,11 @@ class Sistema
         if (file_exists(PATH . 'sistema.save')) {
         $dados = file_get_contents(PATH.'sistema.save');
         $sistema = unserialize($dados);
+        $this->noticias = $sistema->noticias;
+        $this->jornalistas = $sistema->jornalistas;
+        $this->assinantes = $sistema->assinantes;
+        $this->categorias = $sistema->categorias;
+        $this->comentarios = $sistema->comentarios;
         }
     }
 

@@ -14,12 +14,10 @@
         <a href="">Categorias</a>
     </div>
     <?php 
-        //dando erro na hora de cadastrar jornalista: não cadastra ele
-        //verificar em sala
         require_once './classes/Sistema.php';
         $sistema = new Sistema;
         $jornalistas = $sistema->getJorn();
-        var_dump($jornalistas);
+        print_r($jornalistas);
     ?>
 </body>
 </html>
