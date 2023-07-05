@@ -4,6 +4,12 @@ define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 define('SISTEMA', 'sistema-noticias-news');
 define('PATH', ROOT . DS . SISTEMA . DS);
 
+require_once 'Jornalista.php';
+require_once 'Noticia.php';
+require_once 'Assinante.php';
+require_once 'Categoria.php';
+require_once 'Comentario.php';
+
 class Sistema
 {
     private $noticias = [];
@@ -51,7 +57,7 @@ class Sistema
         $jornalista->setStatusJorn('Reprovado');
     }
 
-    function DeletarJorn($cpf)
+    function deletarJorn($cpf)
     {
         $remover = null;
         foreach ($this->jornalistas as $ind => $jornalista) {

@@ -8,16 +8,30 @@
     <title>Notícias News</title>
 </head>
 <body>
+    <?php
+        require_once './classes/Sistema.php';
+        $sistema = new Sistema;
+    ?>
     <div id="navBar">
         <h1>Notícias News</h1>
         <a href="./telas/formLogin.php">Logar</a>
         <a href="">Categorias</a>
-    </div>
+    </div><br>
+    <h2>Jornalistas</h2><br>
     <?php 
-        require_once './classes/Sistema.php';
-        $sistema = new Sistema;
         $jornalistas = $sistema->getJorn();
-        print_r($jornalistas);
+        
+        foreach ($jornalistas as $jorn):
     ?>
+    <p>
+        <?= $jorn->getNome() ?> 
+        <a href="./telas/formAlterarJorn.php?cpf=<?=$jorn->getCpf()?>">Alterar</a> 
+        <a href="./telas/deletarJorn.php?cpf=<?=$jorn->getCpf()?>">Excluir</a>
+    </p>
+
+    <?php
+        endforeach;
+    ?>
+
 </body>
 </html>

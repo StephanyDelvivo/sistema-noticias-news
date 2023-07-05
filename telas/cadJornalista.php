@@ -1,6 +1,5 @@
 <?php
     include '../classes/Sistema.php';
-    include '../classes/Jornalista.php';
 
     $nome = $_REQUEST['nome'];
     $cpf = $_REQUEST['cpf'];
