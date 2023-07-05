@@ -11,16 +11,16 @@ class Noticia
     private $status;
     private $contAcesso;
  
-    public function __construct($titulo, $corpoTexto, $imgNoticia, $status)
+    public function __construct($titulo, $corpoTexto, $imgNoticia)
     {
         $this->titulo = $titulo;
         $this->corpoTexto = $corpoTexto;
         $this->imgNoticia = $imgNoticia;
-        $this->status = $status;
+        $this->status = NULL;
         $this->categorias = [];
         $this->comentarios = [];
         $this->contAcesso = 0;
-        $this->codNoticia = 0;
+        $this->codNoticia = '';
         
     }
 

@@ -2,15 +2,15 @@
 
 class Comentario
 {   
-    private Assinante $autor; 
-    private string $textoComent;  
-    private int $codComent;
+    private $autor; 
+    private $textoComent;  
+    private $codComent;
  
     function __construct($textoComent)
     {
         $this->textoComent = $textoComent;
         $this->autor = null;
-        $this->codComent = 0;
+        $this->codComent = '';
     }
 
     function setAutor($autor)

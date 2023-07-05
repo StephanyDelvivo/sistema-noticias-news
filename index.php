@@ -27,11 +27,28 @@
         <?= $jorn->getNome() ?> 
         <a href="./telas/formAlterarJorn.php?cpf=<?=$jorn->getCpf()?>">Alterar</a> 
         <a href="./telas/deletarJorn.php?cpf=<?=$jorn->getCpf()?>">Excluir</a>
-    </p>
-
+    </p><br>
+    <?php
+        endforeach;
+        $noticias = $sistema->getNotic();
+    ?>
+    <hr>
+    <h2>Noticias</h2><br>
+    <?php
+        foreach ($noticias as $noticia):
+    ?>
+    <h4>
+        <?= $noticia->getTitulo()?>
+        <a href="./telas/formAlterarNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Alterar</a> 
+        <a href="./telas/deletarNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Excluir</a>
+    </h4><br>
+    <p><?= $noticia->getCorpoTexto()?></p><br><br>
+    <!-- tirar duvida de imagem -->
+    <!-- <img src="" > -->
     <?php
         endforeach;
     ?>
+
 
 </body>
 </html>

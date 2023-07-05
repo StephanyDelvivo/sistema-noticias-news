@@ -8,7 +8,7 @@ class Categoria
     function __construct($nome)
     {
         $this->nome = $nome;
-        $this->codCateg = 0;
+        $this->codCateg = '';
     }
 
     function setNome($nome)

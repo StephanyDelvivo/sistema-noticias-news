@@ -38,18 +38,21 @@ class Sistema
         file_put_contents(PATH . 'sistema.save', $serializado);
     }
 
-    function getJorn(){
+    function getJorn()
+    {
         return $this->jornalistas;
     }
 
-    function cadastrarJorn($jornalista){
+    function cadastrarJorn($jornalista)
+    {
         $aux = $this->buscarJorn($jornalista->getCpf());
         if($aux == null){
             $this->jornalistas[] = $jornalista;
         }
     }
 
-    function aprovarJorn($jornalista){
+    function aprovarJorn($jornalista)
+    {
             $jornalista->setStatusJorn('Aprovado');
     }
 
@@ -83,18 +86,20 @@ class Sistema
     }
 
     
-    function getNotic(){
+    function getNotic()
+    {
         return $this->noticias;
     }
 
-    function cadastrarNotic($noticia){
-        $aux = $this->buscarNotic($noticia->getCodNotic());
-        if($aux == null){
-            $this->noticias[] = $noticia;
-        }
+    function cadastrarNotic($noticia)
+    {
+        $this->noticias[] = $noticia;
+        end($this->noticias);
+        $noticia->setCodNoticia(key($this->noticias));
     }
 
-    function aprovarNotic($noticia){
+    function aprovarNotic($noticia)
+    {
             $noticia->setStatusNotic('Aprovada');
     }
 
@@ -112,7 +117,8 @@ class Sistema
         }
     }
 
-    function reprovarNotic($noticia){
+    function reprovarNotic($noticia)
+    {
         $noticia->setStatusNotic('Reprovada');
     }
 
@@ -127,23 +133,25 @@ class Sistema
     }
 
     
-    function getAss(){
+    function getAss()
+    {
         return $this->assinantes;
     }
 
-    function cadastrarAss($assinante){
+    function cadastrarAss($assinante)
+    {
         $aux = $this->buscarAss($assinante->getCpf());
         if($aux == null){
             $this->assinantes[] = $assinante;
         }
     }
 
-    function AprovarAss($assinante)
+    function aprovarAss($assinante)
     {
         $assinante->setStatusAss('Aprovado');
     }
 
-    function ReprovarAss($assinante)
+    function reprovarAss($assinante)
     {
         $assinante->setStatusAss('Reprovado');
     }
@@ -173,16 +181,17 @@ class Sistema
     }
 
 
-    function getCat(){
+    function getCat()
+    {
         return $this->categorias;
     }
 
     function cadastrarCat($categoria)
     {
-        $aux = $this->buscarCat($categoria->getCateg());
-        if ($aux == null) {
-            $this->categorias[] = $categoria;
-        }
+        $this->categorias[] = $categoria;
+        end($this->categorias);
+        $categoria->setCodCateg(key($this->categorias));
+
     }
 
     function deletarCat($codCateg)
@@ -211,16 +220,16 @@ class Sistema
     }
 
 
-    function getComent(){
+    function getComent()
+    {
         return $this->comentarios;
     }
 
     function cadastrarComent($comentario)
     {
-        $aux = $this->buscarComent($comentario->getCodComent());
-        if ($aux == null) {
-            $this->comentarios[] = $comentario;
-        }
+        $this->comentarios[] = $comentario;
+        end($this->comentarios);
+        $comentario->setCodComent(key($this->comentarios));
     }
 
     function deletarComent($codComent)
