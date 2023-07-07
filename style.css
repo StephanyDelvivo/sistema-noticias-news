@@ -8,3 +8,45 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+header {
+    background-color: lightgray;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.drop-menu{
+    position: relative;
+    display: inline-block;
+}
+
+.drop-links {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: fit-content;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.drop-menu:hover .drop-links, .drop-links a{
+    display: block;
+}
+
+.link-menu, .drop-menu{
+    display: inline;
+}
+
+.link-menu a, .drop-menu a {
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.link-menu a:hover, .drop-menu a:hover{
+    text-decoration: underline;
+}

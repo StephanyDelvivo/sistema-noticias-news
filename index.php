@@ -11,6 +11,7 @@
     <?php
         require_once './classes/Sistema.php';
         $sistema = new Sistema;
+        include './telas/cabecalho.php';
     ?>
     <div id="navBar">
         <h1>Notícias News</h1>
