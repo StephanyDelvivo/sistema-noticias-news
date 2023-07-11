@@ -2,12 +2,12 @@
     include '../classes/Sistema.php';
 
     $nome = $_REQUEST['nome'];
-    $cpf = $_REQUEST['cpf'];
+    $codCateg = $_REQUEST['codCateg'];
 
-    $jorn = new Jornalista($nome, $cpf, $email, $senha, $histJorn);
+    $cat = new Categoria($nome, $codCateg);
     $sistema = new Sistema();
 
-    $sistema->cadastrarJorn($jorn);
+    $sistema->cadastrarCat($cat);
 ?>
 <script>
     window.location.href = "../index.php"
