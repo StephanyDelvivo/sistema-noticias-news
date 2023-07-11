@@ -21,12 +21,12 @@ class Categoria
         return $this->nome;
     }
 
-    function setcodCateg($codCateg)
+    function setCodCateg($codCateg)
     {
         $this->codCateg = $codCateg;
     }
 
-    function getcodCateg()
+    function getCodCateg()
     {
         return $this->codCateg;
     }

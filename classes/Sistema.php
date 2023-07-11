@@ -198,7 +198,7 @@ class Sistema
     {
         $remover = null;
         foreach ($this->categorias as $ind => $categoria) {
-            if ($categoria->getCateg() == $codCateg) {
+            if ($categoria->getCodCateg() == $codCateg) {
                 $remover = $ind;
             }
         }
