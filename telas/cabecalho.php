@@ -57,7 +57,7 @@
 <header>
     <h1>Noticias News</h1>
     <nav>
-        <div class="link-menu"><a href="#">Home</a></div>
+        <div class="link-menu"><a href="./index.php">Home</a></div>
         <div class="link-menu"><a href="#">Sobre</a></div>
         <div class="link-menu"><a href="#">Contato</a></div>
         <?=setLoginMenu()?>

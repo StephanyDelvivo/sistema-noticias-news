@@ -15,6 +15,7 @@
         }
         if(isset($usuario)){
             if($senha == $usuario->getSenha()){
+                $_SESSION['cpf'] = $usuario->getCpf();
                 $_SESSION['usuario'] = $usuario->getNome();
                 $_SESSION['tipo'] = $tipo;
             } else {
@@ -48,8 +49,8 @@
     </form>
     <?=$erro?>
     <?php
-        //var_dump($sistema->getAss());
-        //var_dump($sistema->getJorn());
+        #var_dump($sistema->getAss());
+        #var_dump($sistema->getJorn());
     ?>
 </body>
 </html>

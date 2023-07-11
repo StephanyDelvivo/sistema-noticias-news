@@ -41,7 +41,8 @@
     <h4>
         <?= $noticia->getTitulo()?>
         <a href="./telas/formAlterarNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Alterar</a> 
-        <a href="./telas/deletarNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Excluir</a>
+        <a href="./telas/deletarNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Excluir</a><br>
+        <a href="./pagNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Ver noticia</a>
     </h4><br>
     <p><?= $noticia->getCorpoTexto()?></p><br><br>
     <!-- tirar duvida de imagem -->
