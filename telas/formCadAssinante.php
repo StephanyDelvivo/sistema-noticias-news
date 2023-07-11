@@ -18,7 +18,7 @@
         <h3>Forma de Pagamento</h3>
         <label>Número do cartão: <input type="number" name="numCartao" id="numCartao" placeholder="Apenas cartão de crédito"></label><br>
         <input type="submit" value="Cadastrar"><br>
-        <a href="./formCadJornalista.php">Cadastrar como jornalista</a>
+        <a href="./formCadJornalista.php">Cadastrar como jornalista </a>
     </form>
     
 </body>
