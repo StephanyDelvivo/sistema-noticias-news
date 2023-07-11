@@ -7,7 +7,6 @@
     $sistema = new Sistema();
     $categorias = $sistema->buscarCat ($codCateg);
     $categorias->setNome($nome);
-    $categorias->setcodCateg($setcodCateg);
     
 ?>
 <script>

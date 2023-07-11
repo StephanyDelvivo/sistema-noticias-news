@@ -2,9 +2,8 @@
     include '../classes/Sistema.php';
 
     $nome = $_REQUEST['nome'];
-    $codCateg = $_REQUEST['codCateg'];
 
-    $cat = new Categoria($nome, $codCateg);
+    $cat = new Categoria($nome);
     $sistema = new Sistema();
 
     $sistema->cadastrarCat($cat);

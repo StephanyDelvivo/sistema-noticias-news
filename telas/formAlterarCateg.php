@@ -15,11 +15,11 @@
         $categ = $sistema->buscarCat($codCateg);
     ?>
     <h1>Alterar dados de Categoria</h1>
-    <form action="./alterarJornalista.php">
-        <input type="hidden" name="codCateg" value="<?= $categ->getNome() ?>">
+    <form action="./alterarCategoria.php">
+        <input type="hidden" name="codCateg" value="<?= $categ->getCodCateg() ?>">
         <label>
             Nome da Categoria: 
-            <input type="text" value="<?= $jorn->getNome() ?>" name="nome">
+            <input type="text" value="<?= $categ->getNome() ?>" name="nome">
         </label>
         <input type="submit" value="Alterar">
     </form>
