@@ -3,12 +3,6 @@
     margin: 1;
 }
 
-#navBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
 header {
     background-color: lightgray;
 }
