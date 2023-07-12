@@ -74,14 +74,40 @@ class Noticia
         return $this->contAcesso;
     }
 
-    function comentar($textoComent)
+    function comentar($comentario)
     {
-        $this->comentarios[] = $textoComent; 
+        $this->comentarios[] = $comentario;
+        end($this->comentarios);
+        $comentario->setCodComent(key($this->comentarios));
     }
 
     function getComentarios()
     {  
         return $this->comentarios;
+    }
+
+    function deletarComent($codComent)
+    {
+        $remover = null;
+        foreach ($this->comentarios as $ind => $comentario) {
+            if ($comentario->getCodComent() == $codComent) {
+                $remover = $ind;
+            }
+        }
+        var_dump($remover);
+        if ($remover !== null) {
+            unset($this->comentarios[$remover]);
+        }
+    }
+
+    function buscarComent($codComent)
+    {
+        foreach ($this->comentarios as $comentario) {
+            if ($comentario->getCodComent() == $codComent) {
+                return $comentario;
+            }
+        }
+        return null; 
     }
 
     function setCodNoticia($codNoticia) 

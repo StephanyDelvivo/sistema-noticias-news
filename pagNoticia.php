@@ -15,7 +15,7 @@
         $noticia = $sistema->buscarNotic($_GET['codNoticia']);
         if(isset($_POST['comentou'])){
             $comentario = new Comentario($_POST['comentario']);
-            $comentario->setAutor($_SESSION['usuario']);
+            $comentario->setAutor($usuarioLogado);
             #var_dump($comentario);
             #$sistema->cadastrarComent($comentario);
             $noticia->comentar($comentario);
@@ -30,10 +30,11 @@
     ?>
             <h1><?=$noticia->getTitulo()?></h1>
             <p><?=$noticia->getCorpoTexto()?></p>
-            <img src="<?=$noticia->getImgNoticia()?>" alt="Imagem da notícia">
+            <img src="<?=$noticia->getImgNoticia()?>" alt="Imagem da notícia"><br>
+            <button onClick="darLike()" id="botaoLike">LIKE</button><span id="pontos"><?=$noticia->getContAcesso()?></span>
             <h3>Comentarios</h3>
             <?php
-                if(isset($_SESSION['usuario'])) {
+                if(isset($usuarioLogado)) {
                     ?>
                         <p>Novo comentario</p>
                         <form action="" method="post">
@@ -45,7 +46,15 @@
                 foreach (array_reverse($noticia->getComentarios()) as $comentario):
             ?>
                 <h4>
-                    <?= $comentario->getAutor()?>
+                    <?= $comentario->getAutor()->getNome()?>
+                    <?php
+                    if(isset($usuarioLogado)){
+                        if($comentario->getAutor()==$usuarioLogado||$_SESSION['tipo']=='jor'||$_SESSION['tipo']=='adm'){
+                            echo '<a href="./telas/formAlterarComentario.php?codNoticia='.$noticia->getCodNoticia().'&codComent='.$comentario->getCodComent().'">Alterar</a> ';
+                            echo '<a href="./telas/deletarComentario.php?codNoticia='.$noticia->getCodNoticia().'&codComent='.$comentario->getCodComent().'">Excluir</a>';
+                        }
+                    }
+                    ?>
                 </h4>
                 <p><?= $comentario->getTextoComent()?></p><br><br>
             <?php
@@ -54,5 +63,19 @@
     <?php
         endif;
     ?>
+    <script>
+        function darLike(){
+            document.getElementById("botaoLike").disabled = true;
+            document.getElementById("likes").innerHTML += " processando...";
+            var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("likes").innerHTML = this.responseText;
+                }
+            };
+            xml.open("GET", "./servicos/darLikeNoticia.php?codNoticia="+<?=$noticia->getCodNoticia()?>, true);
+            xml.send();
+        }
+    </script>
 </body>
 </html>
