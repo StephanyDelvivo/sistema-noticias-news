@@ -20,7 +20,7 @@
         </label><br>
         <label>
             Imagem: 
-            <input type="file" name="imgNoticia" id="imgNoticia">
+            <input type="text" name="imgNoticia" id="imgNoticia" placeholder="Endereço da imagem">
         </label><br>
         
         <input type="submit" value="Cadastrar">
