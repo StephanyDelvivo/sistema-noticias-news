@@ -8,7 +8,7 @@ class Assinante
     private $numCartao;
     private $statusAss;
 
-    function __construct($nome, $email, $senha, $cpf, $numCartao)
+    function __construct($nome, $cpf, $email, $senha, $numCartao)
     {
         $this->nome = $nome;
         $this->email = $email;
