@@ -22,12 +22,8 @@
         foreach ($noticias as $noticia):
     ?>
     <h4>
-        <?= $noticia->getTitulo()?>
-        <a href="./telas/formAlterarNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Alterar</a> 
-        <a href="./telas/deletarNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Excluir</a><br>
-        <a href="./pagNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>">Ver noticia</a>
+        <a href="./pagNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>"><?= $noticia->getTitulo()?></a>
     </h4><br>
-    <p><?= $noticia->getCorpoTexto()?></p><br><br>
     <img src="<?= $noticia->getImgNoticia() ?>" />
     <?php
         endforeach;
