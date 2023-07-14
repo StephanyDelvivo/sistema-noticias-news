@@ -190,7 +190,7 @@ class Sistema
     {
         $this->categorias[] = $categoria;
         end($this->categorias);
-        $categoria->setCodCateg(key($this->categorias));
+        $categoria->setCodCateg('cat'.key($this->categorias));
 
     }
 

@@ -16,8 +16,6 @@
         if(isset($_POST['comentou'])){
             $comentario = new Comentario($_POST['comentario']);
             $comentario->setAutor($usuarioLogado);
-            #var_dump($comentario);
-            #$sistema->cadastrarComent($comentario);
             $noticia->comentar($comentario);
         }
         if($noticia === NULL):
@@ -31,7 +29,7 @@
             <h1><?=$noticia->getTitulo()?></h1>
             <p><?=$noticia->getCorpoTexto()?></p>
             <img src="<?=$noticia->getImgNoticia()?>" alt="Imagem da notícia"><br>
-            <button onClick="darLike()" id="botaoLike">LIKE</button><span id="pontos"><?=$noticia->getContAcesso()?></span>
+            <button onClick="darLike()" id="botaoLike">LIKE</button><span id="likes"><?=$noticia->getContAcesso()?></span>
             <h3>Comentarios</h3>
             <?php
                 if(isset($usuarioLogado)) {
@@ -63,6 +61,7 @@
     <?php
         endif;
     ?>
+    <p><?= $noticia->getCategoria()->getNome()?></p><br><br>
     <script>
         function darLike(){
             document.getElementById("botaoLike").disabled = true;
