@@ -10,6 +10,7 @@ class Noticia
     private $comentarios;
     private $status;
     private $contAcesso;
+    private $jornalista;
  
     public function __construct($titulo, $corpoTexto, $imgNoticia)
     {
@@ -21,6 +22,7 @@ class Noticia
         $this->comentarios = [];
         $this->contAcesso = 0;
         $this->codNoticia = '';
+        $this->jornalista = NULL;
         
     }
 
@@ -128,6 +130,16 @@ class Noticia
     function getCategoria()
     {
         return $this->categoria;
+    }
+
+    function setJorn($jornalista)
+    {
+        $this->jornalista = $jornalista;
+    }
+
+    function getJorn()
+    {
+        return $this->jornalista;
     }
 
 }
