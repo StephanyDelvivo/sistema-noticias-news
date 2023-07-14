@@ -190,7 +190,7 @@ class Sistema
     {
         $this->categorias[] = $categoria;
         end($this->categorias);
-        $categoria->setCodCateg('cat'.key($this->categorias));
+        $categoria->setCodCateg(key($this->categorias));
 
     }
 
@@ -219,6 +219,18 @@ class Sistema
         return null; 
     }
 
+    function buscarNoticiasPorCat($codCateg){
+        $noticiasCategorizadas = [];
+        foreach($this->noticias as $noticia){
+            $categoria = $noticia->getCategoria();
+            if(isset($categoria)){
+                if($categoria->getCodCateg() == $codCateg){
+                    $noticiasCategorizadas[] = $noticia;
+                }
+            }
+        }
+        return array_reverse($noticiasCategorizadas);
+    }
 
     function getComent()
     {

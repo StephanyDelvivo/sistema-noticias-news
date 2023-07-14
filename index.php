@@ -27,6 +27,7 @@
     <img src="<?= $noticia->getImgNoticia() ?>" />
     <?php
         endforeach;
+        //var_dump($sistema->buscarNoticiasPorCat('cat4'));
     ?>
 
 
