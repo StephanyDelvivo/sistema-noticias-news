@@ -1,3 +1,10 @@
+<?php
+    require_once '../classes/Sistema.php';
+    $sistema = new Sistema();
+    $categorias = $sistema->getCat();
+    var_dump($categorias);
+        ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -22,7 +29,15 @@
             Imagem: 
             <input type="text" name="imgNoticia" id="imgNoticia" placeholder="Endereço da imagem">
         </label><br>
-        
+        <select name="categoria" id="">
+            <?php
+                foreach($categorias as $cats):
+            ?>
+                <option value="<?=$cats->getCodCateg()?>"><?=$cats->getNome()?></option>
+            <?php
+            endforeach;
+            ?>
+        </select>
         <input type="submit" value="Cadastrar">
     </form>
 

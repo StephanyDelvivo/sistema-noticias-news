@@ -6,7 +6,7 @@ class Noticia
     private $titulo;
     private $corpoTexto;
     private $imgNoticia;
-    private $categorias;
+    private $categoria;
     private $comentarios;
     private $status;
     private $contAcesso;
@@ -17,7 +17,7 @@ class Noticia
         $this->corpoTexto = $corpoTexto;
         $this->imgNoticia = $imgNoticia;
         $this->status = NULL;
-        $this->categorias = [];
+        $this->categoria = NULL;
         $this->comentarios = [];
         $this->contAcesso = 0;
         $this->codNoticia = '';
@@ -122,12 +122,12 @@ class Noticia
 
     function categorizar($categoria)
     {
-        $this->categorias[] = $categoria;
+        $this->categoria = $categoria;
     }
 
-    function getCategorias()
+    function getCategoria()
     {
-        return $this->categorias;
+        return $this->categoria;
     }
 
 }
