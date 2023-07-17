@@ -14,7 +14,7 @@
                 $dropdown = '<div class="drop-menu">'.
                     '<a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a>'.
                     '<div class="drop-links">'.
-                        '<a href="#">Alterar dados</a>'.
+                        '<a href="./telas/formAlterarAssinante.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
                         '<a href="./telas/formLogout.php">SAIR</a>'.
                     '</div>'.      
                     '</div>';
@@ -25,7 +25,7 @@
                         '<a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a>'.
                         '<div class="drop-links">'.
                             '<a href="#">Minhas notícias</a>'.
-                            '<a href="#">Alterar dados</a>'.
+                            '<a href="./telas/formAlterarJorn.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
                             '<a href="./telas/formLogout.php">SAIR</a>'.
                         '</div>'.      
                         '</div>';
