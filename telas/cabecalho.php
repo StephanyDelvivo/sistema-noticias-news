@@ -31,7 +31,7 @@
                         '</div>';
                 } else {
                     if($_SESSION['tipo']==='adm'){
-                        //$usuarioLogado = $sistema->buscarAdmin($_SESSION['cpf']);
+                        $usuarioLogado = $sistema->buscarAdmin($_SESSION['cpf']);
                         $dropdown = '<div class="drop-menu">'.
                             '<h2><a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a></h2>'.
                             '<div class="drop-links">'.

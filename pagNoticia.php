@@ -64,11 +64,11 @@
                         ?>
                     </h4>
                     <p><?= $comentario->getTextoComent() ?></p><br><br>
+                    <?php
+                        endforeach;
+                    ?>
             </div>
         </div>
-    <?php
-                endforeach;
-    ?>
 <?php
     endif;
 ?>

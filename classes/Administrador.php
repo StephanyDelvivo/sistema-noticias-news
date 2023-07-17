@@ -3,42 +3,54 @@
 class Administrador
 {
     private $nome;
+    private $cpf;
     private $email;
     private $senha;
 
-    function __construct($nome, $email, $senha)
+    function __construct($nome, $cpf, $email, $senha)
     {
         $this->nome = $nome;
+        $this->cpf = $cpf;
         $this->email = $email;
         $this->senha = $senha;
     }
     
-    function setNome(string $nome)
+    function setNome($nome)
     {
         $this->nome = $nome;
     }
 
-    function getNome(): string
+    function getNome()
     {
         return $this->nome;
     }
 
-    function setEmail(string $email)
+    function setCpf($cpf)
+    {
+        $this->cpf = $cpf;
+    }
+
+    function getCpf()
+    {
+        return $this->cpf;
+    }
+
+    function setEmail($email)
     {
         $this->email = $email;
     }
   
-    function getEmail(): string
+    function getEmail()
     {
         return $this->email;
     }
   
-    function setSenha(int $senha)
+    function setSenha($senha)
     {
         $this->senha = $senha;
     }
   
-    function getSenha(): int
+    function getSenha()
     {
         return $this->senha;
     }

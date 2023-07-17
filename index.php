@@ -18,40 +18,28 @@
     ?>
     <?php
     $noticias = $sistema->getNotic();
+    $categorias = $sistema->getCat();
+    foreach ($categorias as $categoria):
     ?>
     <div class="noticia">
-        <h3>Política --></h3>
-    <?php
-        $noticias = $sistema->buscarNoticiasPorCat(1);
-        foreach ($noticias as $noticia) :
-    ?>
+        <h3><?= $categoria->getNome()?> --></h3>
+        <?php
+            $noticias = $sistema->buscarNoticiasPorCat($categoria->getCodCateg());
+            foreach ($noticias as $noticia):
+        ?>
         <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
             <img src="<?= $noticia->getImgNoticia() ?>" />
         </a>
         <h4>
             <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
         </h4><br>
+        <?php
+            endforeach;
+        ?>
     </div>
-
-    <div class="noticia">
-        <h3>Saúde --></h3>
-    <?php
-        endforeach;
-        $noticias = $sistema->buscarNoticiasPorCat(2);
-        foreach ($noticias as $noticia) :
+    <?php 
+    endforeach;
     ?>
-        <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
-            <img src="<?= $noticia->getImgNoticia() ?>" />
-        </a>
-        <h4>
-            <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
-        </h4><br>
-    </div>
-<?php
-        endforeach;
-?>
-
-
 </body>
 
 </html>

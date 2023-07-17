@@ -9,6 +9,7 @@ require_once 'Noticia.php';
 require_once 'Assinante.php';
 require_once 'Categoria.php';
 require_once 'Comentario.php';
+require_once 'Administrador.php';
 
 class Sistema
 {
@@ -22,13 +23,16 @@ class Sistema
     function __construct()
     {
         if (file_exists(PATH . 'sistema.save')) {
-        $dados = file_get_contents(PATH.'sistema.save');
-        $sistema = unserialize($dados);
-        $this->noticias = $sistema->noticias;
-        $this->jornalistas = $sistema->jornalistas;
-        $this->assinantes = $sistema->assinantes;
-        $this->categorias = $sistema->categorias;
-        $this->comentarios = $sistema->comentarios;
+            $dados = file_get_contents(PATH.'sistema.save');
+            $sistema = unserialize($dados);
+            $this->admin = $sistema->admin;
+            $this->noticias = $sistema->noticias;
+            $this->jornalistas = $sistema->jornalistas;
+            $this->assinantes = $sistema->assinantes;
+            $this->categorias = $sistema->categorias;
+            $this->comentarios = $sistema->comentarios;
+        } else {
+            $this->admin[] = new Administrador('admin','00000000000','admin@email.com','0000');
         }
     }
 
@@ -85,6 +89,15 @@ class Sistema
         return null;  
     }
 
+    function buscarAdmin($cpf)
+    {
+        foreach ($this->admin as $adm) {
+            if ($adm->getCpf() == $cpf) {
+                return $adm;
+            }
+        }
+        return null;  
+    }
     
     function getNotic()
     {
@@ -230,6 +243,19 @@ class Sistema
             }
         }
         return array_reverse($noticiasCategorizadas);
+    }
+
+    function buscarNoticiasPorJorn($cpf){
+        $noticiasJornalista = [];
+        foreach($this->noticias as $noticia){
+            $jornalista = $noticia->getJorn();
+            if(isset($jornalista)){
+                if($jornalista->getCpf() == $cpf){
+                    $noticiasJornalista[] = $noticia;
+                }
+            }
+        }
+        return array_reverse($noticiasJornalista);
     }
 
     function getComent()

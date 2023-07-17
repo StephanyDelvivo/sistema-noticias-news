@@ -12,6 +12,10 @@
         if(!isset($usuario)){
             $usuario = $sistema->buscarJorn($cpf);
             $tipo = 'jor';
+            if(!isset($usuario)){
+                $usuario = $sistema->buscarAdmin($cpf);
+                $tipo = 'adm';
+            }
         }
         if(isset($usuario)){
             if($senha == $usuario->getSenha()){
