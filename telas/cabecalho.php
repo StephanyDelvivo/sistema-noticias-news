@@ -12,7 +12,7 @@
             if($_SESSION['tipo']==='ass'){
                 $usuarioLogado = $sistema->buscarAss($_SESSION['cpf']);
                 $dropdown = '<div class="drop-menu">'.
-                    '<a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a>'.
+                    '<h2><a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a></h2>'.
                     '<div class="drop-links">'.
                         '<a href="./telas/formAlterarAssinante.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
                         '<a href="./telas/formLogout.php">SAIR</a>'.
@@ -22,7 +22,7 @@
                 if($_SESSION['tipo']==='jor'){
                     $usuarioLogado = $sistema->buscarJorn($_SESSION['cpf']);
                     $dropdown = '<div class="drop-menu">'.
-                        '<a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a>'.
+                        '<h2><a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a></h2>'.
                         '<div class="drop-links">'.
                             '<a href="#">Minhas notícias</a>'.
                             '<a href="./telas/formAlterarJorn.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
@@ -33,7 +33,7 @@
                     if($_SESSION['tipo']==='adm'){
                         //$usuarioLogado = $sistema->buscarAdmin($_SESSION['cpf']);
                         $dropdown = '<div class="drop-menu">'.
-                            '<a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a>'.
+                            '<h2><a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a></h2>'.
                             '<div class="drop-links">'.
                                 '<a href="#">Controle usuários</a>'.
                                 '<a href="#">Controle jornalistas</a>'.
@@ -43,12 +43,12 @@
                             '</div>'.      
                             '</div>';
                     } else {
-                        $dropdown = '<div class="link-menu"><a href="./telas/formLogin.php">ENTRAR</a></div>';
+                        $dropdown = '<div class="link-menu"><a href="./telas/formLogin.php">Entrar</a></div>';
                     }
                 }
             }
         } else {
-            $dropdown = '<div class="link-menu"><a href="./telas/formLogin.php">ENTRAR</a></div>';
+            $dropdown = '<div class="link-menu"><h2><a href="./telas/formLogin.php">Entrar</a></h2></div>';
                 /*'<div class="drop-menu">'.
                     '<a  href="#" class="drop-bt">Login</a>'.
                     '<div class="drop-links">'.
@@ -61,11 +61,8 @@
     #}
 ?>
 <header>
-    <h1>Noticias News</h1>
+    <h2><a href="./index.php">Noticias News</a></h2>
     <nav>
-        <div class="link-menu"><a href="./index.php">Home</a></div>
-        <div class="link-menu"><a href="#">Sobre</a></div>
-        <div class="link-menu"><a href="#">Contato</a></div>
         <?=$dropdown?>
     </nav>
 </header>

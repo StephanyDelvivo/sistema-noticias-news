@@ -26,7 +26,7 @@
         </label><br>
         <label>
             Imagem: 
-            <input type="file" name="imgNoticia" id="imgNoticia">
+            <input type="text" name="imgNoticia" id="imgNoticia" placeholder="Endereço da Imagem">
         </label><br>
         <input type="submit" value="Salvar">
     </form>
