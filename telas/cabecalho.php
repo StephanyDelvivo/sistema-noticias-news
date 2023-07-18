@@ -1,4 +1,5 @@
 <?php
+    $sistema = new Sistema();
     session_start();
     /** para testes sem precisar de login*/
     //$_SESSION = []; //apagar dados da sessao
