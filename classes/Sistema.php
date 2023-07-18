@@ -57,10 +57,11 @@ class Sistema
 
     function aprovarJorn($jornalista)
     {
-            $jornalista->setStatusJorn('Aprovado');
+        $jornalista->setStatusJorn('Aprovado');
     }
 
-    function ReprovarJorn($jornalista){
+    function ReprovarJorn($jornalista)
+    {
         $jornalista->setStatusJorn('Reprovado');
     }
 
@@ -113,7 +114,7 @@ class Sistema
 
     function aprovarNotic($noticia)
     {
-            $noticia->setStatusNotic('Aprovada');
+        $noticia->setStatusNotic('Aprovada');
     }
 
     function deletarNotic($codNoticia)
@@ -143,6 +144,34 @@ class Sistema
             }
         }
         return null; 
+    }
+
+    function buscarNoticiasPorCat($codCateg)
+    {
+        $noticiasCategorizadas = [];
+        foreach($this->noticias as $noticia){
+            $categoria = $noticia->getCategoria();
+            if(isset($categoria)){
+                if($categoria->getCodCateg() == $codCateg){
+                    $noticiasCategorizadas[] = $noticia;
+                }
+            }
+        }
+        return array_reverse($noticiasCategorizadas);
+    }
+
+    function buscarNoticiasPorJorn($cpf)
+    {
+        $noticiasJornalista = [];
+        foreach($this->noticias as $noticia){
+            $jornalista = $noticia->getJorn();
+            if(isset($jornalista)){
+                if($jornalista->getCpf() == $cpf){
+                    $noticiasJornalista[] = $noticia;
+                }
+            }
+        }
+        return array_reverse($noticiasJornalista);
     }
 
     
@@ -230,32 +259,6 @@ class Sistema
             }
         }
         return null; 
-    }
-
-    function buscarNoticiasPorCat($codCateg){
-        $noticiasCategorizadas = [];
-        foreach($this->noticias as $noticia){
-            $categoria = $noticia->getCategoria();
-            if(isset($categoria)){
-                if($categoria->getCodCateg() == $codCateg){
-                    $noticiasCategorizadas[] = $noticia;
-                }
-            }
-        }
-        return array_reverse($noticiasCategorizadas);
-    }
-
-    function buscarNoticiasPorJorn($cpf){
-        $noticiasJornalista = [];
-        foreach($this->noticias as $noticia){
-            $jornalista = $noticia->getJorn();
-            if(isset($jornalista)){
-                if($jornalista->getCpf() == $cpf){
-                    $noticiasJornalista[] = $noticia;
-                }
-            }
-        }
-        return array_reverse($noticiasJornalista);
     }
 
     function getComent()

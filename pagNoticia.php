@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
     <title>Notícias News</title>
 </head>
 
@@ -16,6 +16,7 @@
     $sistema = new Sistema();
     include './telas/cabecalho.php';
     $noticia = $sistema->buscarNotic($_GET['codNoticia']);
+    $categoria = $noticia->getCategoria();
     if (isset($_POST['comentou'])) {
         $comentario = new Comentario($_POST['comentario']);
         $comentario->setAutor($usuarioLogado);
@@ -30,10 +31,12 @@
     else :
     ?>
         <div class="pag-noticia">
-            <h3>Mais de <?= $noticia->getCategoria()->getNome() ?> --></h3><br>
+            <h3>
+                <a href="./pagNoticiaPorCateg.php?codCateg=<?= $categoria->getCodCateg()?>">Mais de <?= $categoria->getNome() ?> --></a>
+            </h3><br>
             <h1><?= $noticia->getTitulo() ?></h1>
             <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia"><br>
-            <p><?= $noticia->getCorpoTexto() ?></p>
+            <p><?= $noticia->getCorpoTexto() ?></p><br>
 
             <img onClick="darLike()" id="botaoLike" src="./imagem/iconLike.png" />
             <span id="likes"><?= $noticia->getContAcesso() ?></span><br>

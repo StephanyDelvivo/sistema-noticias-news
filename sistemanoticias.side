@@ -1,0 +1,323 @@
+{
+  "id": "c90bb9cc-3411-44fa-9561-cc02677fb40d",
+  "version": "2.0",
+  "name": "sistemanoticias",
+  "url": "http://localhost/sistema-noticias-news/telas/formLogin.php",
+  "tests": [{
+    "id": "04731b4d-67db-469f-bac5-7b379d133eb5",
+    "name": "Cadastro de Usuário",
+    "commands": [{
+      "id": "aa7a4c41-eac9-4364-98f7-ebea873cde0f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/sistema-noticias-news/telas/formCadAssinante.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d36ee20f-ac46-4d00-b555-5413960ed31c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x860",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b1159b6-fa03-4515-8219-b559c551f7a6",
+      "comment": "",
+      "command": "click",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c205941c-b67d-482b-a01e-1fb2c65e9ef7",
+      "comment": "",
+      "command": "type",
+      "target": "id=nome",
+      "targets": [
+        ["id=nome", "id"],
+        ["name=nome", "name"],
+        ["css=#nome", "css:finder"],
+        ["xpath=//input[@id='nome']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Miguel"
+    }, {
+      "id": "7a8617d6-b22e-43b5-bf2a-308f0bad9c29",
+      "comment": "",
+      "command": "click",
+      "target": "id=cpf",
+      "targets": [
+        ["id=cpf", "id"],
+        ["name=cpf", "name"],
+        ["css=#cpf", "css:finder"],
+        ["xpath=//input[@id='cpf']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45900738-93d7-4367-b8e8-0c698689abce",
+      "comment": "",
+      "command": "type",
+      "target": "id=cpf",
+      "targets": [
+        ["id=cpf", "id"],
+        ["name=cpf", "name"],
+        ["css=#cpf", "css:finder"],
+        ["xpath=//input[@id='cpf']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": "1442545363635"
+    }, {
+      "id": "2af6219a-a83d-4553-91f0-ac8424a7c6c0",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bc58e05-7d4a-4486-8b28-cfbd3af97ad4",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": "fugvuhh@gmail.com"
+    }, {
+      "id": "207e431e-c396-4213-b2ce-a34bd11049e6",
+      "comment": "",
+      "command": "click",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5cfb63a-ca4d-44c9-bc1e-96743b129728",
+      "comment": "",
+      "command": "type",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": "ergteg"
+    }, {
+      "id": "65be902e-6f7e-406f-9449-d72e8ed16b13",
+      "comment": "",
+      "command": "click",
+      "target": "id=numCartao",
+      "targets": [
+        ["id=numCartao", "id"],
+        ["name=numCartao", "name"],
+        ["css=#numCartao", "css:finder"],
+        ["xpath=//input[@id='numCartao']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fa9900a-1882-4397-bb33-ad3b3ba1ff94",
+      "comment": "",
+      "command": "type",
+      "target": "id=numCartao",
+      "targets": [
+        ["id=numCartao", "id"],
+        ["name=numCartao", "name"],
+        ["css=#numCartao", "css:finder"],
+        ["xpath=//input[@id='numCartao']", "xpath:attributes"],
+        ["xpath=//label[5]/input", "xpath:position"]
+      ],
+      "value": "31231243141234"
+    }, {
+      "id": "5cd0e370-a92a-42db-b9a1-7587147a4995",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(13)",
+      "targets": [
+        ["css=input:nth-child(13)", "css:finder"],
+        ["xpath=//input[@value='Cadastrar']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "1d886b51-ce33-430c-94a8-fbe5b94de7c2",
+    "name": "LOgin",
+    "commands": [{
+      "id": "ba085dfc-b86b-46e6-87e1-a32e0008d23a",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost/sistema-noticias-news/telas/formLogin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9fdb653f-8bc4-412e-ac4e-9fbc4661e245",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "945x860",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "077721e3-f298-48ef-8724-94f3d8ecf607",
+      "comment": "",
+      "command": "click",
+      "target": "id=cpf",
+      "targets": [
+        ["id=cpf", "id"],
+        ["name=cpf", "name"],
+        ["css=#cpf", "css:finder"],
+        ["xpath=//input[@id='cpf']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3339c440-8923-450d-8553-15ec9864b272",
+      "comment": "",
+      "command": "type",
+      "target": "id=cpf",
+      "targets": [
+        ["id=cpf", "id"],
+        ["name=cpf", "name"],
+        ["css=#cpf", "css:finder"],
+        ["xpath=//input[@id='cpf']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "53376797699"
+    }, {
+      "id": "77ca9d7f-2bd2-49be-b17a-b119bf0bed4c",
+      "comment": "",
+      "command": "click",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93735a64-fb69-40b7-9c71-f36f9871325f",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": "algo@gmail.com"
+    }, {
+      "id": "8cb0c9cc-dd66-49df-811a-52e0bbd31521",
+      "comment": "",
+      "command": "click",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d512b2c-0320-4076-978e-50e57489984e",
+      "comment": "",
+      "command": "type",
+      "target": "id=senha",
+      "targets": [
+        ["id=senha", "id"],
+        ["name=senha", "name"],
+        ["css=#senha", "css:finder"],
+        ["xpath=//input[@id='senha']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": "senha"
+    }, {
+      "id": "3c977d80-ef41-4641-a020-e19c27d38ff9",
+      "comment": "",
+      "command": "click",
+      "target": "name=entrou",
+      "targets": [
+        ["name=entrou", "name"],
+        ["css=input:nth-child(7)", "css:finder"],
+        ["xpath=//input[@name='entrou']", "xpath:attributes"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d65fddd5-6036-47d7-8359-ea877eeae7ba",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Miguel",
+      "targets": [
+        ["linkText=Miguel", "linkText"],
+        ["css=.drop-bt", "css:finder"],
+        ["xpath=//a[contains(text(),'Miguel')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/h2/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Miguel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f368616-05e7-40ef-a98f-118396f3e6a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.drop-menu > h2",
+      "targets": [
+        ["css=.drop-menu > h2", "css:finder"],
+        ["xpath=//div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Miguel')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f6bad9db-391d-447b-8b6c-ee510493f7b9",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Miguel",
+      "targets": [
+        ["linkText=Miguel", "linkText"],
+        ["css=.drop-bt", "css:finder"],
+        ["xpath=//a[contains(text(),'Miguel')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#')]", "xpath:href"],
+        ["xpath=//div/h2/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Miguel')]", "xpath:innerText"]
+      ],
+      "value": "Miguel"
+    }]
+  }],
+  "suites": [{
+    "id": "eba260b4-9679-4be6-902a-83dbaf20f2bb",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["04731b4d-67db-469f-bac5-7b379d133eb5"]
+  }],
+  "urls": ["http://localhost/sistema-noticias-news/telas/formCadAssinante.php", "http://localhost/sistema-noticias-news/telas/formLogin.php"],
+  "plugins": []
+}
