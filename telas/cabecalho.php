@@ -15,8 +15,8 @@
                 $dropdown = '<div class="drop-menu">'.
                     '<h2><a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a></h2>'.
                     '<div class="drop-links">'.
-                        '<a href="./telas/formAlterarAssinante.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
-                        '<a href="./telas/formLogout.php">SAIR</a>'.
+                        '<a href="./formAlterarAssinante.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
+                        '<a href="./formLogout.php">SAIR</a>'.
                     '</div>'.      
                     '</div>';
             } else {
@@ -25,9 +25,9 @@
                     $dropdown = '<div class="drop-menu">'.
                         '<h2><a  href="#" class="drop-bt">'.$usuarioLogado->getNome().'</a></h2>'.
                         '<div class="drop-links">'.
-                            '<a href="#">Minhas notícias</a>'.
-                            '<a href="./telas/formAlterarJorn.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
-                            '<a href="./telas/formLogout.php">SAIR</a>'.
+                            '<a href="./pagJornalista.php">Minhas notícias</a>'.
+                            '<a href="./formAlterarJorn.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
+                            '<a href="./formLogout.php">SAIR</a>'.
                         '</div>'.      
                         '</div>';
                 } else {
@@ -38,18 +38,18 @@
                             '<div class="drop-links">'.
                                 '<a href="#">Controle usuários</a>'.
                                 '<a href="#">Controle jornalistas</a>'.
-                                '<a href="#">Controle notícias</a>'.
+                                '<a href="./pagAdmin.php">Controle notícias</a>'.
                                 '<a href="#">Alterar dados</a>'.
-                                '<a href="./telas/formLogout.php">SAIR</a>'.
+                                '<a href="./formLogout.php">SAIR</a>'.
                             '</div>'.      
                             '</div>';
                     } else {
-                        $dropdown = '<div class="link-menu"><a href="./telas/formLogin.php">Entrar</a></div>';
+                        $dropdown = '<div class="link-menu"><a href="./formLogin.php">Entrar</a></div>';
                     }
                 }
             }
         } else {
-            $dropdown = '<div class="link-menu"><h2><a href="./telas/formLogin.php">Entrar</a></h2></div>';
+            $dropdown = '<div class="link-menu"><h2><a href="./formLogin.php">Entrar</a></h2></div>';
                 /*'<div class="drop-menu">'.
                     '<a  href="#" class="drop-bt">Login</a>'.
                     '<div class="drop-links">'.

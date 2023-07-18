@@ -30,7 +30,7 @@
         }
     }
     if(isset($_SESSION['usuario'])){
-        header("Location: ../index.php"); die();
+        header("Location: ./index.php"); die();
     }
 ?>
 <!DOCTYPE html>
@@ -59,7 +59,7 @@
         <?=$erro?>
         <?php
             #var_dump($sistema->getAss());
-            #var_dump($sistema->getJorn());
+            var_dump($sistema->getJorn());
         ?>
     </div>
 </body>

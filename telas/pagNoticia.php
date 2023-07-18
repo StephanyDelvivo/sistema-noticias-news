@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Notícias News</title>
 </head>
 
 <body>
     <?php
-    require_once './classes/Sistema.php';
+    require_once '../classes/Sistema.php';
     $sistema = new Sistema();
-    include './telas/cabecalho.php';
+    include './cabecalho.php';
     $noticia = $sistema->buscarNotic($_GET['codNoticia']);
     $categoria = $noticia->getCategoria();
     if (isset($_POST['comentou'])) {
@@ -38,7 +38,7 @@
             <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia"><br>
             <p><?= $noticia->getCorpoTexto() ?></p><br>
 
-            <img onClick="darLike()" id="botaoLike" src="./imagem/iconLike.png" />
+            <img onClick="darLike()" id="botaoLike" src="../imagem/iconLike.png" />
             <span id="likes"><?= $noticia->getContAcesso() ?></span><br>
             <hr>
             <div class="comentarios">
@@ -60,8 +60,8 @@
                         <?php
                         if (isset($usuarioLogado)) {
                             if ($comentario->getAutor() == $usuarioLogado || $_SESSION['tipo'] == 'jor' || $_SESSION['tipo'] == 'adm') {
-                                echo '<a href="./telas/formAlterarComentario.php?codNoticia=' . $noticia->getCodNoticia() . '&codComent=' . $comentario->getCodComent() . '">Alterar</a> ';
-                                echo '<a href="./telas/deletarComentario.php?codNoticia=' . $noticia->getCodNoticia() . '&codComent=' . $comentario->getCodComent() . '">Excluir</a>';
+                                echo '<a href="./formAlterarComentario.php?codNoticia=' . $noticia->getCodNoticia() . '&codComent=' . $comentario->getCodComent() . '">Alterar</a> ';
+                                echo '<a href="./deletarComentario.php?codNoticia=' . $noticia->getCodNoticia() . '&codComent=' . $comentario->getCodComent() . '">Excluir</a>';
                             }
                         }
                         ?>
@@ -85,7 +85,7 @@
                 document.getElementById("likes").innerHTML = this.responseText;
             }
         };
-        xml.open("GET", "./servicos/darLikeNoticia.php?codNoticia=" + <?= $noticia->getCodNoticia() ?>, true);
+        xml.open("GET", "../servicos/darLikeNoticia.php?codNoticia=" + <?= $noticia->getCodNoticia() ?>, true);
         xml.send();
     }
 </script>

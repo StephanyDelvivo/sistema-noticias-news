@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Notícias News</title>
 </head>
 <body>
 <?php
-    require_once './classes/Sistema.php';
+    require_once '../classes/Sistema.php';
     $sistema = new Sistema();
-    include './telas/cabecalho.php';
+    include './cabecalho.php';
     $noticias = $sistema->getNotic();
     $codCateg = $_REQUEST['codCateg'];
 

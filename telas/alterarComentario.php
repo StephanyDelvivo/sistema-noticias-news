@@ -12,5 +12,5 @@
 
 ?>
 <script>
-    window.location.href = "../pagNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>";
+    window.location.href = "./pagNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>";
 </script>

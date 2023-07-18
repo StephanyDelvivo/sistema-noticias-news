@@ -22,6 +22,7 @@ $categorias = $sistema->getCat();
     <div class="formulario-noticia">
         <h1>Cadastrar Noticia</h1><br>
         <form action="./cadNoticia.php">
+            <input type="hidden" name="cpf" value="<?=$usuarioLogado->getCpf()?>">
             <label for="titulo">
                 Título:<textarea rows="6" cols="50" name="titulo" id="titulo"></textarea>
             </label><br><br>
