@@ -17,5 +17,5 @@
     $assinante->setNumCartao($numCartao);
 ?>
 <script>
-    window.location.href = "../index.php"
+    window.location.href = "./index.php"
 </script>
