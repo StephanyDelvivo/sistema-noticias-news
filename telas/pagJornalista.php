@@ -15,22 +15,25 @@
     require_once '../classes/Sistema.php';
     $sistema = new Sistema;
     include './cabecalho.php';
+    if ($usuarioLogado->getStatusJorn() == 'Aprovado') :
     ?>
-    <h2><a href="./formCadNoticia.php">Nova notícia</a></h2>
+        <h2><a href="./formCadNoticia.php">Nova notícia +</a></h2>
+        <?php
+        $noticias = $sistema->buscarNoticiasPorJorn($usuarioLogado->getCpf());
+        foreach ($noticias as $noticia) :
+        ?>
+            <div class="noticia">
+                <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
+                    <img src="<?= $noticia->getImgNoticia() ?>" />
+                </a>
+                <h4>
+                    <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
+                </h4><br>
+            </div>
     <?php
-    $noticias = $sistema->buscarNoticiasPorJorn($usuarioLogado->getCpf());
-    foreach ($noticias as $noticia):
-    ?>
-    <div class="noticia">
-        <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
-            <img src="<?= $noticia->getImgNoticia() ?>" />
-        </a>
-        <h4>
-            <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
-        </h4><br>
-    </div>
-    <?php 
-    endforeach;
+        endforeach;
+    else: echo '<h2>Aguarde seu perfil ser analisado para cadastrar notícias 😉</h2>';
+    endif;
     ?>
 </body>
 

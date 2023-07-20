@@ -188,16 +188,6 @@ class Sistema
         }
     }
 
-    function aprovarAss($assinante)
-    {
-        $assinante->setStatusAss('Aprovado');
-    }
-
-    function reprovarAss($assinante)
-    {
-        $assinante->setStatusAss('Reprovado');
-    }
-
     function deletarAss($cpf)
     {
         $remover = null;
