@@ -76,6 +76,7 @@ nav {
 }
 
 .link-menu a:hover, .drop-menu a:hover{
+    color:#527E8A;
     text-decoration: underline;
 }
 
@@ -218,9 +219,13 @@ nav {
     text-align: center;
 }
 
-.comentarios h3, a {
+.comentarios h4 {
     color:#1BBFBF;
-    text-decoration: none;
+}
+
+.comentarios a {
+    color:#527E8A;
+    text-decoration: underline;
 }
 
 .comentarios textarea {
@@ -241,6 +246,11 @@ nav {
     text-align: start;
 }
 
-.comentarios a {
+.jornalista {
+    display: flex;
+    flex-direction: column;
+}
+
+.jornalista p {
     color:#527E8A;
 }
