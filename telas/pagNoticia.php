@@ -35,9 +35,20 @@
                 <a href="./pagNoticiaPorCateg.php?codCateg=<?= $categoria->getCodCateg()?>">Mais de <?= $categoria->getNome() ?> --></a>
             </h3><br>
             <h1><?= $noticia->getTitulo() ?></h1>
-            <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia"><br>
-            <p><?= $noticia->getCorpoTexto() ?></p><br>
-
+            <?php
+                if(!$noticia->getPremium() || isset($usuarioLogado)):
+            ?>
+                <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia"><br>
+                <p><?= $noticia->getCorpoTexto() ?></p><br>
+            <?php
+               else:
+            ?>
+                <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia" class="borrado"><br>
+                <p>Esta notícia é exclusiva para assinantes.<br><a href="./formCadAssinante.php">Torne-se assinante para ler essas e muitas outras notícias 🤗</a></p>
+                
+            <?php
+               endif;
+            ?>
             <img onClick="darLike()" id="botaoLike" src="../imagem/iconLike.png" />
             <span id="likes"><?= $noticia->getContAcesso() ?></span><br>
             <hr>
@@ -77,16 +88,18 @@
 ?>
 <script>
     function darLike() {
-        document.getElementById("botaoLike").disabled = true;
-        document.getElementById("likes").innerHTML += " processando...";
-        var xml = new XMLHttpRequest();
-        xml.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("likes").innerHTML = this.responseText;
-            }
-        };
-        xml.open("GET", "../servicos/darLikeNoticia.php?codNoticia=" + <?= $noticia->getCodNoticia() ?>, true);
-        xml.send();
+        if(!document.getElementById("botaoLike").disabled){
+            document.getElementById("botaoLike").disabled = true;
+            document.getElementById("likes").innerHTML += " processando...";
+            var xml = new XMLHttpRequest();
+            xml.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("likes").innerHTML = this.responseText;
+                }
+            };
+            xml.open("GET", "../servicos/darLikeNoticia.php?codNoticia=" + <?= $noticia->getCodNoticia() ?>, true);
+            xml.send();
+        }
     }
 </script>
 </body>
