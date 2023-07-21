@@ -11,6 +11,7 @@ class Noticia
     private $status;
     private $contAcesso;
     private $jornalista;
+    private $premium;
  
     public function __construct($titulo, $corpoTexto, $imgNoticia)
     {
@@ -23,7 +24,7 @@ class Noticia
         $this->contAcesso = 0;
         $this->codNoticia = '';
         $this->jornalista = NULL;
-        
+        $this->premium = false;
     }
 
     function setTitulo($titulo)
@@ -142,4 +143,14 @@ class Noticia
         return $this->jornalista;
     }
 
+    
+    function setPremium($premium)
+    {
+        $this->premium = $premium; 
+    }
+  
+    function getPremium()
+    { 
+        return $this->premium;
+    }
 }

@@ -254,3 +254,6 @@ nav {
 .jornalista p {
     color:#527E8A;
 }
+.borrado {
+    filter: blur(15px);
+}

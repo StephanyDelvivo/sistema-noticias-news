@@ -24,15 +24,15 @@ $categorias = $sistema->getCat();
         <form action="./cadNoticia.php">
             <input type="hidden" name="cpf" value="<?=$usuarioLogado->getCpf()?>">
             <label for="titulo">
-                Título:<textarea rows="6" cols="50" name="titulo" id="titulo"></textarea>
+                Título:<textarea rows="6" cols="50" name="titulo" id="titulo" required></textarea>
             </label><br><br>
             <label>
-                Corpo do Texto:<textarea rows="50" cols="100" name="corpoTexto" id="corpoTexto"></textarea>
+                Corpo do Texto:<textarea rows="50" cols="100" name="corpoTexto" id="corpoTexto" required></textarea>
             </label><br><br>
             <label>
                 Imagem:<input type="text" name="imgNoticia" id="imgNoticia" size="50" placeholder="Endereço da imagem">
             </label><br><br>
-            <select name="categoria" id="">
+            <select name="categoria" id="" required>
                 <?php
                 foreach ($categorias as $cats) :
                 ?>

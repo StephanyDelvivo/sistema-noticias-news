@@ -17,13 +17,13 @@
     <div class="formulario">
         <h1>Cadastro</h1><br>
         <form action="./cadJornalista.php">
-            <label>Nome:<input type="text" name="nome" id="nome"></label><br><br>
-            <label>CPF:<input type="number" name="cpf" id="cpf"></label><br><br>
-            <label>Email:<input type="email" name="email" id="email"></label><br><br>
-            <label>Senha:<input type="password" name="senha" id="senha"></label><br><br>
+            <label>Nome:<input type="text" name="nome" id="nome" required></label><br><br>
+            <label>CPF:<input min="11" max="11" type="number" name="cpf" id="cpf" required></label><br><br>
+            <label>Email:<input type="email" name="email" id="email" required></label><br><br>
+            <label>Senha:<input min="8" type="password" name="senha" id="senha" required></label><br><br>
             <hr />
             <h3>Comprovar ter cursado ou estar cursando Jornalismo</h3><br>
-            <label>Histórico:<input type="text" name="histJorn" id="histJorn"></label><br><br>
+            <label>Histórico:<input type="text" name="histJorn" id="histJorn" required></label><br><br>
             <input type="submit" value="Cadastrar" id="botaoEnviar"><br>
         </form>
     </div>

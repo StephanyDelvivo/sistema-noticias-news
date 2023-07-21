@@ -17,13 +17,13 @@
     <div class="formulario">
         <h1>Cadastro</h1><br>
         <form action="./cadAssinante.php">
-            <label>Nome:<input type="text" name="nome" id="nome"></label><br><br>
-            <label>CPF:<input type="number" name="cpf" id="cpf"></label><br><br>
-            <label>Email:<input type="email" name="email" id="email"></label><br><br>
-            <label>Senha:<input type="password" name="senha" id="senha"></label><br><br>
+            <label>Nome:<input type="text" name="nome" id="nome" required></label><br><br>
+            <label>CPF:<input min="11" max="11" type="number" name="cpf" id="cpf" required></label><br><br>
+            <label>Email:<input type="email" name="email" id="email" required></label><br><br>
+            <label>Senha:<input min="8" type="password" name="senha" id="senha" required></label><br><br>
             <hr />
             <h3>Forma de Pagamento</h3><br>
-            <label>Número do cartão: <input type="number" name="numCartao" id="numCartao" placeholder="Apenas cartão de crédito"></label><br><br>
+            <label>Número do cartão: <input type="number" name="numCartao" id="numCartao" placeholder="Apenas cartão de crédito" required></label><br><br>
             <input type="submit" value="Cadastrar" id="botaoEnviar"><br><br>
             <a href="./formCadJornalista.php">Cadastrar como jornalista </a>
         </form>

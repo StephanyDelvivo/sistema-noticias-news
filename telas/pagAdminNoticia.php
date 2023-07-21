@@ -31,6 +31,7 @@
                 <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a><br><br>
                 <a href="./aprovarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>&statusNoticia=Aprovada">Aprovar ✅</a><br>
                 <a href="./aprovarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>&statusNoticia=Reprovada">Reprovar❌</a><br>
+                <a href="./exclusivaNoticia.php?codNoticia=<?= $noticia->getCodNoticia()?>&premium=true">Deixar notícia exclusiva</a><br>
                 <hr>
                 <?php
                 if ($noticia->getStatusNotic() === NULL) {
