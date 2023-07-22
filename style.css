@@ -19,10 +19,11 @@ header {
     margin-bottom: 5%;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     padding: 15px;
     background-color: #1BBFBF;
 }
+
 header h2 a {
     color: white;
     text-decoration: none;
@@ -31,10 +32,10 @@ header h2 a {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
 }
 
-.drop-menu{
+.drop-menu {
     position: relative;
     display: inline-block;
 }
@@ -45,16 +46,19 @@ nav {
     background-color: white;
     border-radius: 5px;
     min-width: fit-content;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
-.drop-menu:hover .drop-links, .drop-links a{
+.drop-menu:hover .drop-links,
+.drop-links a {
     display: block;
 }
 
-.link-menu, .drop-menu{
+.link-menu,
+.drop-menu {
     display: inline;
+    text-decoration: none;
 }
 
 .drop-menu a {
@@ -62,6 +66,7 @@ nav {
     font-size: 18px;
     text-decoration: none;
 }
+
 .drop-links a {
     color: #1BBFBF;
     font-size: 15px;
@@ -75,39 +80,40 @@ nav {
     text-decoration: none;
 }
 
-.link-menu a:hover, .drop-menu a:hover{
-    color:#527E8A;
-    text-decoration: underline;
+.link-menu a:hover,
+.drop-menu a:hover {
+    color: #527E8A;
+    text-decoration: none;
 }
 
 .formulario {
     padding: 5%;
     border-radius: 10px;
-    background-color:aliceblue;
-    display:flex;
+    background-color: aliceblue;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .formulario a {
-    color:#527E8A;
+    color: #527E8A;
     text-decoration: underline;
 }
 
 .formulario input {
-    color:#527E8A;
+    color: #527E8A;
     border: 0px solid #1BBFBF;
     margin-left: 5%;
 }
 
 .formulario #botaoEnviar {
-    color:#1BBFBF;
+    color: #1BBFBF;
     border: solid #527E8A;
     padding: 5px;
     border-radius: 5px;
     margin-left: 40%;
     margin-top: 2%;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .formulario label {
@@ -117,27 +123,29 @@ nav {
 .formulario-noticia {
     padding: 2%;
     border-radius: 10px;
-    background-color:aliceblue;
-    display:flex;
+    background-color: aliceblue;
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.formulario-noticia input , select, option{
-    color:#527E8A;
+.formulario-noticia input,
+select,
+option {
+    color: #527E8A;
     border: 0px solid #1BBFBF;
     border: 5px;
 }
 
 .formulario-noticia #titulo {
-    color:#527E8A;
+    color: #527E8A;
     border: 0px solid #1BBFBF;
     margin-left: 24%;
     margin-top: 2%;
 }
 
 .formulario-noticia #corpoTexto {
-    color:#527E8A;
+    color: #527E8A;
     border: 0px solid #1BBFBF;
     margin-left: 7%;
     margin-top: 2%;
@@ -145,12 +153,12 @@ nav {
 
 
 .formulario-noticia #botaoEnviar {
-    color:#1BBFBF;
+    color: #1BBFBF;
     border: solid #527E8A;
     padding: 5px;
     border-radius: 5px;
     margin-left: 40%;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .formulario-noticia label {
@@ -168,16 +176,18 @@ nav {
 .noticia img {
     width: 250px;
     height: 300px;
+    border-radius: 30px;
 }
 
-.noticia h4, a {
+.noticia h4,
+a {
     text-decoration: none;
-    color:#1BBFBF;
+    color: #1BBFBF;
 }
 
 .noticia h4 a {
     text-decoration: none;
-    color:#1BBFBF;
+    color: #1BBFBF;
 }
 
 .pag-noticia {
@@ -192,7 +202,7 @@ nav {
 }
 
 #imagemNoticia {
-    width:50%;
+    width: 50%;
     margin-left: 25%;
 }
 
@@ -202,12 +212,15 @@ nav {
     margin-left: 25%;
 }
 
-.pag-noticia h1, h2, p{
+.pag-noticia h1,
+h2,
+p {
     text-align: center;
 }
 
 .pag-noticia p {
-    color:#527E8A;
+    color: #527E8A;
+    text-align: center;
 }
 
 .comentarios {
@@ -220,11 +233,11 @@ nav {
 }
 
 .comentarios h4 {
-    color:#1BBFBF;
+    color: #1BBFBF;
 }
 
 .comentarios a {
-    color:#527E8A;
+    color: #527E8A;
     text-decoration: underline;
 }
 
@@ -236,13 +249,13 @@ nav {
 
 .comentarios input {
     border-radius: 5px;
-    border-color:#527E8A;
+    border-color: #527E8A;
     background-color: white;
     color: #527E8A;
 }
 
 .comentarios p {
-    color:#527E8A;
+    color: #527E8A;
     text-align: start;
 }
 
@@ -252,8 +265,19 @@ nav {
 }
 
 .jornalista p {
-    color:#527E8A;
+    color: #527E8A;
 }
+
 .borrado {
     filter: blur(15px);
+}
+
+#opniaoComentario {
+    display: none;
+}
+
+#iconeBatePapo {
+    width: 50px;
+    cursor: pointer;
+    margin-left: 25%;
 }

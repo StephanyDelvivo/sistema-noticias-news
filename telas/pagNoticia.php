@@ -57,11 +57,13 @@
                 <?php
                 if (isset($usuarioLogado)) {
                 ?>
-                    <p>Novo comentario</p>
-                    <form action="" method="post">
-                        <textarea name="comentario" id="comentario" cols="50" rows="5"></textarea>
-                        <input type="submit" value="Comentar" name="comentou">
-                    </form><br>
+                    <img id="iconeBatePapo" src="../imagem/comentario.png" onClick="batePapo()">
+                    <div id="opniaoComentario">
+                        <form action="" method="post">
+                            <textarea name="comentario" id="comentario" cols="50" rows="5"></textarea><br>
+                            <input type="submit" value="Comentar" name="comentou">
+                        </form><br>
+                    </div>
                 <?php
                 }
                 foreach (array_reverse($noticia->getComentarios()) as $comentario) :
@@ -99,6 +101,14 @@
             };
             xml.open("GET", "../servicos/darLikeNoticia.php?codNoticia=" + <?= $noticia->getCodNoticia() ?>, true);
             xml.send();
+        }
+    };
+  
+    function batePapo(){
+        if(document.getElementById('opniaoComentario').style.display == 'block'){
+         document.getElementById('opniaoComentario').style.display = 'none';}
+        else {
+            document.getElementById('opniaoComentario').style.display = 'block';
         }
     }
 </script>
