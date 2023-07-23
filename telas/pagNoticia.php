@@ -38,8 +38,8 @@
             <?php
                 if(!$noticia->getPremium() || isset($usuarioLogado)):
             ?>
-                <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia"><br>
-                <p><?= $noticia->getCorpoTexto() ?></p><br>
+            <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia">
+            <p><?= $noticia->getCorpoTexto() ?></p><br>
             <?php
                else:
             ?>

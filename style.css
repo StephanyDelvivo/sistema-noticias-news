@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 body {
     color: #1BBFBF;
     font-family: 'Inter';
@@ -14,7 +15,20 @@ body {
     justify-content: space-around;
 }
 
+
+
+
 header {
+
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
     flex: 100%;
     margin-bottom: 5%;
     display: flex;
@@ -23,6 +37,8 @@ header {
     padding: 15px;
     background-color: #1BBFBF;
 }
+
+*/
 
 header h2 a {
     color: white;
@@ -34,6 +50,8 @@ nav {
     flex-direction: row;
     justify-content: space-around;
 }
+
+
 
 .drop-menu {
     position: relative;
@@ -204,6 +222,7 @@ a {
 #imagemNoticia {
     width: 50%;
     margin-left: 25%;
+
 }
 
 #botaoLike {
@@ -280,4 +299,13 @@ p {
     width: 50px;
     cursor: pointer;
     margin-left: 25%;
+}
+
+#cabecalho {
+    width: 300px;
+    height: 100px;
+    background-color: #1BBFBF;
+    border-radius: 60px;
+    margin-top: 50px;
+    
 }
