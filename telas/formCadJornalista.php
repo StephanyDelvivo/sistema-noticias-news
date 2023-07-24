@@ -18,9 +18,9 @@
         <h1>Cadastro</h1><br>
         <form action="./cadJornalista.php">
             <label>Nome:<input type="text" name="nome" id="nome" required></label><br><br>
-            <label>CPF:<input min="11" max="11" type="number" name="cpf" id="cpf" required></label><br><br>
+            <label>CPF:<input type="number" name="cpf" id="cpf" required></label><br><br>
             <label>Email:<input type="email" name="email" id="email" required></label><br><br>
-            <label>Senha:<input min="8" type="password" name="senha" id="senha" required></label><br><br>
+            <label>Senha:<input minlength="8" type="password" name="senha" id="senha" required></label><br><br>
             <hr />
             <h3>Comprovar ter cursado ou estar cursando Jornalismo</h3><br>
             <label>Histórico:<input type="text" name="histJorn" id="histJorn" required></label><br><br>
