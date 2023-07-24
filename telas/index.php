@@ -34,7 +34,7 @@
             <img src="<?= $noticia->getImgNoticia() ?>" />
         </a>
         <h4>
-            <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
+            <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?=$noticia->getPremium()? '⭐ ':''?><?= $noticia->getTitulo() ?></a>
         </h4><br>
         <?php
             endif;

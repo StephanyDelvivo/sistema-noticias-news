@@ -17,7 +17,7 @@
     include './cabecalho.php';
     ?>
     <?php
-    $noticias = $sistema->getNotic();
+    $noticias = array_reverse($sistema->getNotic());
     foreach ($noticias as $noticia) :
     ?>
         <div class="noticia">
