@@ -23,7 +23,7 @@
             <label>Senha:<input type="password" name="senha" id="senha" minlength="8" title="senha de no mínimo 8 dígitos" required></label><br><br>
             <hr />
             <h3>Forma de Pagamento</h3><br>
-            <label>Número do cartão: <input type="text" name="numCartao" id="numCartao" pattern="[0-9] {16}" placeholder="Apenas cartão de crédito" title="16 números do cartão de crédito" required></label><br><br>
+            <label>Número do cartão: <input type="text" name="numCartao" id="numCartao" pattern="[0-9]{16}" placeholder="Apenas cartão de crédito" title="16 números do cartão de crédito" required></label><br><br>
             <input type="submit" value="Cadastrar" id="botaoEnviar"><br><br>
             <a href="./formCadJornalista.php">Cadastrar como jornalista </a>
         </form>
