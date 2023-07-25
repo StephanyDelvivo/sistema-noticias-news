@@ -6,9 +6,14 @@
 
     $sistema  = new Sistema();
     $noticia = $sistema->buscarNotic($codNoticia);
-    $noticia->setStatusNotic($status);
+    if ($status == 'Reprovada'){
+        $noticia->setStatusNotic($status);
+        $sistema->deletarNotic($codNoticia);
+    } else {
+        $noticia->setStatusNotic($status);
+    }
 
 ?>
 <script>
-    window.location.href = "./pagAdmin.php";
+    window.location.href = "./pagAdminNoticia.php";
 </script>
