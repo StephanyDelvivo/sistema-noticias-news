@@ -16,7 +16,7 @@
     $sistema = new Sistema;
     include './cabecalho.php';
     ?>
-    <a href="./formCadCategoria">+ Nova categoria</a><br><br>
+    <a href="./formCadCategoria.php">+ Nova categoria</a><br><br>
     <?php
     $categorias = $sistema->getCat();
     foreach ($categorias as $categoria) :

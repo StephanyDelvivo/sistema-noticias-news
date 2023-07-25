@@ -20,7 +20,7 @@
     ?>
     <div class="formulario-noticia">
         <h1>Editar Notícia</h1><br>
-        <form action="./alterarNoticia.php">
+        <form action="./alterarNoticia.php" method="post" enctype="multipart/form-data">
             <input type="hidden" name="codNoticia" value="<?= $noticia->getCodNoticia() ?>">
 
             <label for="titulo">
@@ -30,7 +30,7 @@
                 Corpo do Texto:<textarea rows="30" cols="100" name="corpoTexto" id="corpoTexto"><?= $noticia->getCorpoTexto() ?></textarea>
             </label><br><br>
             <label>
-                Imagem:<input type="text" name="imgNoticia" id="imgNoticia" size="50" value="<?= $noticia->getImgNoticia() ?>" placeholder="Endereço da Imagem">
+                Imagem:<input type="file" name="imgNoticia" id="imgNoticia" size="50" value="<?= $noticia->getImgNoticia() ?>">
             </label><br><br>
             <select name="categoria" id="">
                 <?php
