@@ -1,7 +1,7 @@
 <?php 
     use PHPUnit\Framework\TestCase;
-    require_once './Sistema.php';
-    require_once './Jornalista.php';
+    require_once '../classes/Sistema.php';
+    require_once '../classes/Jornalista.php';
 
     class SistemaTest extends TestCase {
 
