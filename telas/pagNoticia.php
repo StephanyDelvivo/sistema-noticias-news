@@ -49,7 +49,7 @@
             <?php
                endif;
             ?>
-            <img onClick="darLike()" id="botaoLike" src="../imagem/iconLike.png" />
+            <img onClick="darLike()" id="botaoLike" src="../icone/iconLike.png" />
             <span id="likes"><?= $noticia->getContAcesso() ?></span><br>
             <hr>
             <div class="comentarios">
