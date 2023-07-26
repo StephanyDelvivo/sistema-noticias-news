@@ -24,25 +24,25 @@
             <input type="hidden" name="cpfAntigo" value="<?= $assinante->getCpf() ?>">
 
             <label>
-                Nome:<input type="text" value="<?= $assinante->getNome() ?>" name="nome">
+                Nome:<input type="text" value="<?= $assinante->getNome() ?>" name="nome" required>
             </label><br><br>
 
             <label>
-                CPF:<input type="number" value="<?= $assinante->getCpf() ?>" name="cpf">
+                CPF:<input type="number" pattern="[0-9]{11}" title="11 números do CPF" title="11 números do CPF" value="<?= $assinante->getCpf() ?>" name="cpf" required>
             </label><br><br>
 
             <label>
-                Email:<input type="email" value="<?= $assinante->getEmail() ?>" name="email">
+                Email:<input type="email" value="<?= $assinante->getEmail() ?>" name="email" required> 
             </label><br><br>
 
             <label>
-                Senha:<input type="password" value="<?= $assinante->getSenha() ?>" name="senha">
+                Senha:<input type="password" minlength="8" title="senha de no mínimo 8 dígitos" value="<?= $assinante->getSenha() ?>" name="senha" required>
             </label><br><br>
 
             <hr />
             <h3>Forma de Pagamento</h3><br>
             <label>
-                Número do Cartão:<input type="number" value="<?= $assinante->getNumCartao() ?>" name="numCartao">
+                Número do Cartão:<input type="number" pattern="[0-9]{16}" placeholder="Apenas cartão de crédito" title="16 números do cartão de crédito" value="<?= $assinante->getNumCartao() ?>" name="numCartao" required>
             </label>
 
             <input type="submit" value="Alterar" id="botaoEnviar">
