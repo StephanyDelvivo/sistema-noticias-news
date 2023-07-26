@@ -29,21 +29,20 @@
         $noticias = $sistema->buscarNoticiasPorJorn($cpf);
         foreach ($noticias as $noticia) :
         ?>
+        <div class="noticia">
             <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
                 <img src="<?= $noticia->getImgNoticia() ?>" />
             </a>
             <h4>
                 <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a><br><br>
             </h4>
+        </div>
         <?php
         endforeach;
         ?><br><br>
         <a href="./aprovarJorn.php?cpf=<?= $jornalista->getCpf() ?>&statusJorn=Aprovado">Aprovar Jornalista ✅</a><br>
         <a href="./aprovarJorn.php?cpf=<?= $jornalista->getCpf() ?>&statusJorn=Reprovado">Reprovar Jornalista ❌</a><br>
     </div>
-    <?php
-    include './rodape.php';
-    ?>
 </body>
 
 </html>

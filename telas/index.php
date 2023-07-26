@@ -37,7 +37,6 @@
         </h4><br>
       
         <?php
-          
             endif;
             endforeach;
         ?>

@@ -44,9 +44,6 @@
             <input type="submit" value="Salvar" id="botaoEnviar">
         </form>
     </div>
-    <?php
-    include './rodape.php';
-    ?>
 </body>
 
 </html>

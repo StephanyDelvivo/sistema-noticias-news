@@ -56,14 +56,10 @@
             <input type="submit" value="Entrar" name="entrou" id="botaoEnviar"><br><br>
             <p>Ainda não é cadastrado ? <a href="./formCadAssinante.php">Cadastre-se!</a></p>
         </form>
-        <?=$erro?>
-        <?php
-            #var_dump($sistema->getAss());
-            #var_dump($sistema->getJorn());
+        <?php 
+        $erro;
+        include './rodape.php';
         ?>
     </div>
-    <?php 
-        include './rodape.php';
-     ?>
 </body>
 </html>

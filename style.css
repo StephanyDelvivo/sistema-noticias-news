@@ -278,7 +278,7 @@ p {
     padding: 10px;
     border-width: 3px;
     border-style: double;
-    border-color: #3c9ab4;
+    border-color: #1BBFBF;
     border-radius: 20px;
 }
 
@@ -300,6 +300,9 @@ p {
     display: flex;
     flex: 100%;
     justify-content: flex-end;
+    position:absolute;
+    bottom:0;
+    width: 100%;
 }
 
 footer {

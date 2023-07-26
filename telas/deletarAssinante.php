@@ -4,6 +4,8 @@
     $cpf = $_REQUEST['cpf'];
     $sistema = new Sistema();
     $sistema->deletarAss($cpf);
+    
+    include './formLogout.php';
 ?>
 <script>
     window.location.href = "./index.php"
