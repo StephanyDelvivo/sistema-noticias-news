@@ -296,62 +296,19 @@ p {
     margin-left: 25%;
 }
 
-footer {
-    flex: 100%;
-    margin-bottom: 5%;
-    padding: 20px;
-    background-color: #1BBFBF;
-    color: white;
-}
-
-.rodape-colunas-individuais {
+.rodape {
     display: flex;
-    flex-wrap: wrap
+    flex: 100%;
+    justify-content: flex-end;
 }
 
-
-.colunas {
-    width: 25%;
-
-}
-
-.colunas h4 {
-    margin-bottom: 15px;
-    font-size: 22px;
-    font-weight: 500;
-    position: relative;
-    text-transform: uppercase;
-}
-
-.colunas ul {
-    list-style: none;
-}
-
-.colunas li {
-    margin-bottom: 5px;
-}
-
-.colunas form input {
-    width: 71%;
-    outline: none;
-    border: 1px solid white;
-    color: white;
+footer {
+    display: flex;
+    flex: 100%;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 7%;
+    padding: 10px;
     background-color: #1BBFBF;
-    padding: 20px;
-
-}
-
-.colunas form input::placeholder {
     color: white;
-}
-
-.colunas form button {
-    width: 80%;
-    outline: none;
-    border: 1px solid white;
-    color:  #1BBFBF;
-    background-color: white;
-    padding: 20px;
-    margin-top: 5px;
-
 }

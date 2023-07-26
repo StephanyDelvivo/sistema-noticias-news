@@ -44,7 +44,7 @@
                else:
             ?>
                 <img src="<?= $noticia->getImgNoticia() ?>" id="imagemNoticia" class="borrado"><br>
-                <p>Esta notícia é exclusiva para assinantes.<br><a href="./formCadAssinante.php">Torne-se assinante para ler essas e muitas outras notícias 🤗</a></p>
+                <p>Esta notícia é exclusiva para assinantes.<br><a href="./formCadAssinante.php">Torne-se assinante para ler essas e muitas outras 🤗</a></p>
                 
             <?php
                endif;
@@ -57,13 +57,13 @@
                 <?php
                 if (isset($usuarioLogado)) {
                 ?>
-                    <img id="iconeBatePapo" src="../imagem/comentario.png" onClick="batePapo()">
-                    <div id="opniaoComentario">
+                    <!-- <img id="iconeBatePapo" src="../icone/comentario.png" onClick="batePapo()"> -->
+                    <!-- <div id="opniaoComentario"> -->
                         <form action="" method="post">
                             <textarea name="comentario" id="comentario" cols="50" rows="5"></textarea><br>
                             <input type="submit" value="Comentar" name="comentou">
                         </form><br>
-                    </div>
+                    <!-- </div> -->
                 <?php
                 }
                 foreach (array_reverse($noticia->getComentarios()) as $comentario) :
@@ -104,13 +104,13 @@
         }
     };
   
-    function batePapo(){
-        if(document.getElementById('opniaoComentario').style.display == 'block'){
-         document.getElementById('opniaoComentario').style.display = 'none';}
-        else {
-            document.getElementById('opniaoComentario').style.display = 'block';
-        }
-    }
+    // function batePapo(){
+    //     if(document.getElementById('opniaoComentario').style.display == 'block'){
+    //      document.getElementById('opniaoComentario').style.display = 'none';}
+    //     else {
+    //         document.getElementById('opniaoComentario').style.display = 'block';
+    //     }
+    // }
 </script>
 </body>
 
