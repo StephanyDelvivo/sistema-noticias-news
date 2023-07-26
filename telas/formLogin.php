@@ -59,7 +59,7 @@
         <?=$erro?>
         <?php
             #var_dump($sistema->getAss());
-            #var_dump($sistema->getJorn());
+            var_dump($sistema->getJorn());
         ?>
     </div>
     <?php 

@@ -57,7 +57,7 @@
                 <?php
                 if (isset($usuarioLogado)) {
                 ?>
-                    <img id="iconeBatePapo" src="../imagem/comentario.png" onClick="batePapo()">
+                    <img id="iconeBatePapo" src="../icone/comentario.png" onClick="batePapo()">
                     <div id="opniaoComentario">
                         <form action="" method="post">
                             <textarea name="comentario" id="comentario" cols="50" rows="5"></textarea><br>
