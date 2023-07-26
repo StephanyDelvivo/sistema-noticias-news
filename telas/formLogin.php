@@ -62,5 +62,8 @@
             #var_dump($sistema->getJorn());
         ?>
     </div>
+    <?php 
+        include './rodape.php';
+     ?>
 </body>
 </html>
