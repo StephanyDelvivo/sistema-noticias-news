@@ -17,6 +17,7 @@
 
     $noticias = $sistema->buscarNoticiasPorCat($codCateg);
     foreach ($noticias as $noticia):
+        if($noticia->getStatusNotic()=='Aprovada'):
 ?>
     <div class="noticia">
         <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
@@ -26,6 +27,7 @@
             <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
         </h4><br>
 <?php
+        endif;
     endforeach;
 ?>
     </div>

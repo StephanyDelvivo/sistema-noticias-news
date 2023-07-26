@@ -37,6 +37,7 @@
         </div>
     <?php
     endforeach;
+    include './rodape.php';
     ?>
 </body>
 

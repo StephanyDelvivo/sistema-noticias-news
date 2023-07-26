@@ -17,7 +17,7 @@
     include './cabecalho.php';
     if ($usuarioLogado->getStatusJorn() == 'Aprovado') :
     ?>
-        <h2><a href="./formCadNoticia.php">Nova notícia +</a></h2>
+        <h2><a href="./formCadNoticia.php">Nova notícia + </a></h2><br><br>
         <?php
         $noticias = $sistema->buscarNoticiasPorJorn($usuarioLogado->getCpf());
         foreach ($noticias as $noticia) :
@@ -33,7 +33,8 @@
                     if ($noticia->getStatusNotic() == NULL):
                 ?>
                     <a href="./formAlterarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">Editar ✍</a>
-                    <a href="./deletarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">Excluir 🗑</a>
+                    <a href="./deletarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">Excluir 🗑</a><hr>
+                    <p>Notícia em análise...</p>
                 <?php
                     endif;
                 ?>
