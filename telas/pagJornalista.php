@@ -43,6 +43,9 @@
     else: echo '<h2>Aguarde seu perfil ser analisado para cadastrar notícias 😉</h2>';
     endif;
     ?>
+    <?php
+        include './rodape.php';
+    ?>
 </body>
 
 </html>
