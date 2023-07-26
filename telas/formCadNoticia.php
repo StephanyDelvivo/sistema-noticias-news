@@ -44,6 +44,9 @@ $categorias = $sistema->getCat();
             <input type="submit" value="Cadastrar" id="botaoEnviar">
         </form>
     </div>
+    <?php 
+        include './rodape.php';
+     ?>
 
 </body>
 
