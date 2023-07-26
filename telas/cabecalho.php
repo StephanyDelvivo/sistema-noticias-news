@@ -39,6 +39,7 @@
                             '<div class="drop-links">'.
                                 '<a href="./pagAdminJorn.php">Gerenciar Jornalistas</a>'.
                                 '<a href="./pagAdminNoticia.php">Gerenciar Notícias</a>'.
+                                '<a href="./pagAdminCateg.php">Gerenciar Categorias</a>'.
                                 '<a href="./formAlterarAdmin.php?cpf='.$usuarioLogado->getCpf().'">Alterar dados</a>'.
                                 '<a href="./formLogout.php">SAIR</a>'.
                             '</div>'.      

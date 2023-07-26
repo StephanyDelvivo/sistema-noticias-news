@@ -29,6 +29,14 @@
                 <h4>
                     <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
                 </h4><br>
+                <?php
+                    if ($noticia->getStatusNotic() == NULL):
+                ?>
+                    <a href="./formAlterarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">Editar ✍</a>
+                    <a href="./deletarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">Excluir 🗑</a>
+                <?php
+                    endif;
+                ?>
             </div>
     <?php
         endforeach;

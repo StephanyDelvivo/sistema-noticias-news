@@ -254,6 +254,17 @@ nav {
 .jornalista p {
     color:#527E8A;
 }
+
+.categoria {
+    max-width: 200px;
+    max-height: 100px;
+    padding: 10px;
+    border-width: 3px;
+    border-style: double;
+    border-color: #3c9ab4;
+    border-radius: 20px;
+}
+
 .borrado {
     filter: blur(15px);
 }
