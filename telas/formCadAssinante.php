@@ -28,6 +28,9 @@
             <a href="./formCadJornalista.php">Cadastrar como jornalista </a>
         </form>
     </div>
+    <?php 
+        include './rodape.php';
+     ?>
 
 </body>
 

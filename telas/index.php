@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,14 +35,23 @@
         <h4>
             <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?=$noticia->getPremium()? '⭐ ':''?><?= $noticia->getTitulo() ?></a>
         </h4><br>
+      
         <?php
+          
             endif;
             endforeach;
         ?>
+      
     </div>
-    <?php 
-    endforeach;
-    ?>
+   
+        <?php 
+            endforeach;
+        ?>
+     <?php 
+        include './rodape.php';
+     ?>
+
+   
 </body>
 
 </html>
