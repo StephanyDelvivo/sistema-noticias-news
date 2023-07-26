@@ -63,10 +63,9 @@
     #}
 ?>
 <header>
-    <div id="cabecalho">
         <h2><a href="./index.php">Noticias News</a></h2>
         <nav>
             <?=$dropdown?>
         </nav>
-    </div>
+   
 </header>

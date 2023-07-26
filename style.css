@@ -272,7 +272,6 @@ p {
     color: #527E8A;
 }
 
-<<<<<<< HEAD
 .categoria {
     max-width: 200px;
     max-height: 100px;
@@ -283,8 +282,6 @@ p {
     border-radius: 20px;
 }
 
-=======
->>>>>>> featureGui
 .borrado {
     filter: blur(15px);
 }
