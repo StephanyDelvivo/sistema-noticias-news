@@ -1,5 +1,6 @@
 <?php
     require_once '../classes/Sistema.php';
+    session_start();
 
     $cpfAntigo = $_REQUEST['cpfAntigo'];
     $nome = $_REQUEST['nome'];
@@ -13,6 +14,7 @@
     $admin->setCpf($cpfNovo);
     $admin->setEmail($email);
     $admin->setSenha($senha);
+    $_SESSION['cpf'] = $admin->getCpf();
 ?>
 <script>
     window.location.href = "./index.php"

@@ -1,5 +1,6 @@
 <?php 
     require_once '../classes/Sistema.php';
+    session_start();
 
     $cpfAntigo = $_REQUEST['cpfAntigo'];
     $nome = $_REQUEST['nome'];
@@ -15,6 +16,7 @@
     $jornalista->setEmail($email);
     $jornalista->setSenha($senha);
     $jornalista->setHistorico($hist);
+    $_SESSION['cpf'] = $jornalista->getCpf();
 ?>
 <script>
     window.location.href = "./index.php"
