@@ -300,7 +300,7 @@ p {
     display: flex;
     flex: 100%;
     justify-content: flex-end;
-    position:absolute;
+    position:relative;
     bottom:0;
     width: 100%;
 }

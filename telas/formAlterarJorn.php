@@ -49,9 +49,6 @@
         </form>
         <a href="./deletarJorn.php?cpf= <?= $jorn->getCpf() ?>" style="color: red; text-decoration:none;">Apagar Conta ❌</a>
     </div>
-    <?php
-    include './rodape.php';
-    ?>
 
 </body>
 

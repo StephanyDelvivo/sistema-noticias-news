@@ -26,9 +26,5 @@
             <input type="submit" value="Alterar" id="botaoEnviar">
         </form>
     </div>
-    <?php 
-        include './rodape.php';
-     ?>
-    
 </body>
 </html>

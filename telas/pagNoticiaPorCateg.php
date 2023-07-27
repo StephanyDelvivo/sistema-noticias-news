@@ -27,7 +27,7 @@
             <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
         </h4><br>
 <?php
-        endif;
+    endif;
     endforeach;
 ?>
     </div>
