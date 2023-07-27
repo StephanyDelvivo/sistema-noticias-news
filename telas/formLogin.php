@@ -57,8 +57,11 @@
             <p>Ainda não é cadastrado ? <a href="./formCadAssinante.php">Cadastre-se!</a></p>
         </form>
         <?php 
+        // $assinante = $sistema->getAss();
+        // $jornalista = $sistema->getJorn();
+        // var_dump($jornalista);
+        // var_dump($assinante);
         $erro;
-        include './rodape.php';
         ?>
     </div>
 </body>

@@ -35,22 +35,15 @@
         <h4>
             <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?=$noticia->getPremium()? '⭐ ':''?><?= $noticia->getTitulo() ?></a>
         </h4><br>
-      
         <?php
             endif;
             endforeach;
         ?>
-      
     </div>
-   
-        <?php 
-            endforeach;
-        ?>
-     <?php 
+    <?php 
+        endforeach;
         include './rodape.php';
-     ?>
-
-   
+    ?> 
 </body>
 
 </html>
