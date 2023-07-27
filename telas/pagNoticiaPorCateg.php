@@ -14,18 +14,22 @@
     include './cabecalho.php';
     $noticias = $sistema->getNotic();
     $codCateg = $_REQUEST['codCateg'];
+    $categoria = $sistema->buscarCat($codCateg);
 
     $noticias = $sistema->buscarNoticiasPorCat($codCateg);
+    ?>
+    <div class="noticia-por-categ">
+    <h1 style="text-align: center;">Todas as notícias de <?= $categoria->getNome() ?> ↓</h1><br>
+    <?php
     foreach ($noticias as $noticia):
         if($noticia->getStatusNotic()=='Aprovada'):
     ?>
-            <div class="noticia">
-                <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
-                    <img src="<?= $noticia->getImgNoticia() ?>" />
-                </a>
-                <h4>
-                    <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
-                </h4><br>
+            <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
+                <img src="<?= $noticia->getImgNoticia() ?>" />
+            </a>
+            <h4>
+                <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
+            </h4><br>
     <?php
     endif;
     endforeach;

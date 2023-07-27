@@ -7,7 +7,7 @@
     $cpfNovo = $_REQUEST['cpf'];
     $email = $_REQUEST['email'];
     $senha = $_REQUEST['senha'];
-    $hist = $_REQUEST['histJorn'];
+    $sobre = $_REQUEST['sobreJorn'];
 
     $sistema = new Sistema();
     $jornalista = $sistema->buscarJorn($cpfAntigo);
@@ -15,7 +15,7 @@
     $jornalista->setCpf($cpfNovo);
     $jornalista->setEmail($email);
     $jornalista->setSenha($senha);
-    $jornalista->setHistorico($hist);
+    $jornalista->setSobre($sobre);
     $_SESSION['cpf'] = $jornalista->getCpf();
 ?>
 <script>

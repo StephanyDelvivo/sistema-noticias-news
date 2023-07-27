@@ -167,15 +167,15 @@ option {
 .noticia {
     display: flex;
     flex-direction: column;
-    max-width: 250px;
-    margin-bottom: 5%;
+    max-width: 350px;
+    margin-bottom: 2%;
     margin-right: 5%;
 }
 
 .noticia img {
-    width: 250px;
+    max-width: 350px;
     height: 300px;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 .noticia h4,
@@ -184,7 +184,24 @@ a {
     color: #1BBFBF;
 }
 
-.noticia h4 a {
+.noticia-por-categ {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 600px;
+    min-width: 600px;
+    margin-bottom: 2%;
+}
+
+.noticia-por-categ img {
+    max-width: 600px;
+    min-width: 600px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.noticia-por-categ h4,
+a {
     text-decoration: none;
     color: #1BBFBF;
 }

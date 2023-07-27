@@ -16,13 +16,13 @@
     $jornalista = $sistema->buscarJorn($cpf);
     ?>
     <div class="jornalista">
-        <h1>Informações de <?= $jornalista->getNome() ?> ⇣ </h1><br><br>
+        <h1>Informações de <?= $jornalista->getNome() ?> ↓ </h1><br><br>
         <h2>Email: </h2><br>
         <p><?= $jornalista->getEmail() ?></p><br><br>
-        <h2>Histórico: </h2><br>
-        <p><?= $jornalista->getHistorico() ?></p><br><br>
+        <h2>Sobre: </h2><br>
+        <p><?= $jornalista->getSobre() ?></p><br><br>
         <hr>
-        <h2>Notícias:</h2>
+        <h2>Notícias:</h2><br>
         <?php
         $noticias = $sistema->buscarNoticiasPorJorn($cpf);
         foreach ($noticias as $noticia) :

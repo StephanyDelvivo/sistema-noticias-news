@@ -6,9 +6,9 @@
     $cpf = $_REQUEST['cpf'];
     $email = $_REQUEST['email'];
     $senha = $_REQUEST['senha'];
-    $histJorn = $_REQUEST['histJorn'];
+    $sobre = $_REQUEST['sobreJorn'];
 
-    $jorn = new Jornalista($nome, $cpf, $email, $senha, $histJorn);
+    $jorn = new Jornalista($nome, $cpf, $email, $senha, $sobre);
     $sistema = new Sistema();
 
     if(checarCpf($cpf)){
