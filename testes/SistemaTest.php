@@ -10,7 +10,7 @@
         function testDeveriaCadastrarJorn()
         {
             $sistema = new Sistema();
-            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
+            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'sobreJorn');
             $contagem = count($sistema->getJorn());
             $sistema->cadastrarJorn($jornalista);
             $resultadoEsperado = $contagem + 1;
@@ -19,13 +19,13 @@
             $this->assertCount($resultadoEsperado, $sistema->getJorn());
         }
 
-        function testDeveriaCadastrarJornRepitido()
+        function testDeveriaCadastrarJornRepetido()
         {
             $sistema = new Sistema();
-            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
+            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'sobreJorn');
             $sistema->cadastrarJorn($jornalista);
             $contagem = count($sistema->getJorn());
-            $jornalista2 = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
+            $jornalista2 = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'sobreJorn');
             $sistema->cadastrarJorn($jornalista2);
             $resultadoEsperado = $contagem;
             $resultado = count($sistema->getJorn());
@@ -36,7 +36,7 @@
         function testDeveriaRetornarBuscaJorn()
         {
             $sistema = new Sistema();
-            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
+            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'sobreJorn');
             $sistema->cadastrarJorn($jornalista);
             $sistema->aprovarJorn($jornalista);
             $resultadoEsperado = $jornalista;
@@ -48,7 +48,7 @@
         function testDeveriaRetornarBuscaJornInexistente()
         {
             $sistema = new Sistema();
-            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
+            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'sobreJorn');
             $sistema->cadastrarJorn($jornalista);
             $sistema->aprovarJorn($jornalista);
             $resultado = $sistema->buscarJorn('00000000000');
@@ -59,7 +59,7 @@
         function testDeveriaDeletarJorn()
         {
             $sistema = new Sistema();
-            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
+            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'sobreJorn');
             $sistema->cadastrarJorn($jornalista);
             $sistema->aprovarJorn($jornalista);
             $contagem = count($sistema->getJorn());
@@ -73,7 +73,7 @@
         function testDeveriaDeletarJornInexistente()
         {
             $sistema = new Sistema();
-            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
+            $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'sobreJorn');
             $sistema->cadastrarJorn($jornalista);
             $sistema->aprovarJorn($jornalista);
             $contagem = count($sistema->getJorn());
