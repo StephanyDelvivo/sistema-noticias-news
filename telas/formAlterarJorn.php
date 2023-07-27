@@ -38,9 +38,10 @@
             </label><br><br>
 
             <hr />
-            <h3>Comprovar ter cursado ou estar cursando Jornalismo</h3><br>
+            <h3>Qualificações e áreas que deseja atuar</h3><br>
             <label>
-                Histórico:<input type="text" value="<?= $jorn->getHistorico() ?>" name="histJorn">
+                Sobre: 
+                <textarea style="border: 0px solid #1BBFBF;" rows="6" cols="40" name="sobreJorn"><?= $jorn->getSobre() ?></textarea>
             </label><br><br>
 
             <input type="submit" value="Alterar" id="botaoEnviar">

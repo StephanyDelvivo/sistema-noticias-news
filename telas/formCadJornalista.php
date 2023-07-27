@@ -20,8 +20,11 @@
             <label>Email:<input type="email" name="email" id="email" required></label><br><br>
             <label>Senha:<input type="password" name="senha" id="senha" minlength="8" title="senha de no mínimo 8 dígitos" required></label><br><br>
             <hr />
-            <h3>Comprovar ter cursado ou estar cursando Jornalismo</h3><br>
-            <label>Histórico:<input type="text" name="histJorn" id="histJorn" required></label><br><br>
+            <h3>Qualificações e áreas que deseja atuar</h3><br>
+            <label>
+                Sobre: 
+                <textarea style="border: 0px solid #1BBFBF;" rows="6" cols="40" name="sobreJorn"></textarea>
+            </label><br><br>
             <input type="submit" value="Cadastrar" id="botaoEnviar"><br>
         </form>
     </div>

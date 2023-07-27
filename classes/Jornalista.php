@@ -5,17 +5,17 @@ class Jornalista
     private $cpf;
     private $email;
     private $senha;
-    private $historico;
+    private $sobre;
     private $noticias;
     private $statusJorn;
 
-     function __construct($nome, $cpf, $email, $senha, $historico)
+     function __construct($nome, $cpf, $email, $senha, $sobre)
     {
         $this->nome = $nome;
         $this->email = $email;
         $this->senha = $senha;
         $this->cpf = $cpf;
-        $this->historico = $historico;
+        $this->sobre = $sobre;
         $this->noticias = [];
         $this->statusJorn = NULL;
     }
@@ -70,13 +70,13 @@ class Jornalista
         return $this->statusJorn;
     }
 
-    function setHistorico($historico)
+    function setSobre($sobre)
     {
-        $this->historico = $historico;
+        $this->sobre = $sobre;
     }
 
-    function getHistorico()
+    function getSobre()
     {    
-        return $this->historico;
+        return $this->sobre;
     }
 }
