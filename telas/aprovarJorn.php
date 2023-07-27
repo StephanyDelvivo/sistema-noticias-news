@@ -12,7 +12,6 @@
     } else {
         $jornalista->setStatusJorn($statusJorn);
     }
-
 ?>
 <script>
     window.location.href = "./pagAdminJorn.php";

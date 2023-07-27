@@ -1,7 +1,8 @@
 <?php
     require_once '../classes/Sistema.php';
 
-    function checarCpf($cpf){
+    function checarCpf($cpf)
+    {
         $sistema = new Sistema();
         $usuario = $sistema->buscarAss($cpf);
         if(!isset($usuario)){
@@ -15,6 +16,5 @@
         } else {
             return FALSE;
         }
-    }
-    
+    }  
 ?>

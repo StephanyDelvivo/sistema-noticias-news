@@ -16,7 +16,6 @@
     $noticia->setCorpoTexto($corpoTexto);
     $noticia->setImgNoticia("imagens/$nome_real");
     $noticia->categorizar($sistema->buscarCat($categoria));
-
 ?>
 <script>
     window.location.href = "./index.php"

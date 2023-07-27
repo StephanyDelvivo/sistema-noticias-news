@@ -1,5 +1,4 @@
 <?php
-
 class Administrador
 {
     private $nome;
@@ -54,5 +53,4 @@ class Administrador
     {
         return $this->senha;
     }
-
 }

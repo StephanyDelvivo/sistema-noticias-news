@@ -1,5 +1,4 @@
 <?php
-
 class Categoria
 { 
     private $nome; 
@@ -30,5 +29,4 @@ class Categoria
     {
         return $this->codCateg;
     }
-
 }

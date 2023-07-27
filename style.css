@@ -3,7 +3,6 @@
     margin: 0;
 }
 
-
 body {
     color: #1BBFBF;
     font-family: 'Inter';
@@ -25,12 +24,10 @@ header {
     background-color: #1BBFBF;
 }
 
-
 header h2 a {
     color: white;
     text-decoration: none;
 }
-
 
 nav {
     display: flex;
@@ -154,7 +151,6 @@ option {
     margin-top: 2%;
 }
 
-
 .formulario-noticia #botaoEnviar {
     color: #1BBFBF;
     border: solid #527E8A;
@@ -207,7 +203,6 @@ a {
 #imagemNoticia {
     width: 50%;
     margin-left: 25%;
-
 }
 
 #botaoLike {

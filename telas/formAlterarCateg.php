@@ -10,11 +10,11 @@
 </head>
 <body>
     <?php
-        require_once '../classes/Sistema.php';
-        include './cabecalho.php';
-        $codCateg = $_REQUEST['codCateg'];
-        $sistema = new Sistema();
-        $categ = $sistema->buscarCat($codCateg);
+    require_once '../classes/Sistema.php';
+    include './cabecalho.php';
+    $codCateg = $_REQUEST['codCateg'];
+    $sistema = new Sistema();
+    $categ = $sistema->buscarCat($codCateg);
     ?>
     <div class="formulario">
         <h1>Alterar dados de Categoria</h1><br>

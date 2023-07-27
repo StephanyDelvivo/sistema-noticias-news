@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Notícias News</title>
 </head>
-
 <body>
     <?php
     require_once '../classes/Sistema.php';
@@ -30,20 +28,19 @@
                     <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?= $noticia->getTitulo() ?></a>
                 </h4><br>
                 <?php
-                    if ($noticia->getStatusNotic() == NULL):
+                if ($noticia->getStatusNotic() == NULL):
                 ?>
                     <a href="./formAlterarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">Editar ✍</a>
                     <a href="./deletarNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">Excluir 🗑</a><hr>
                     <p>Notícia em análise...</p>
                 <?php
-                    endif;
+                endif;
                 ?>
             </div>
-    <?php
+        <?php
         endforeach;
-    else: echo '<h2>Aguarde seu perfil ser analisado para cadastrar notícias 😉</h2>';
+        else: echo '<h2>Aguarde seu perfil ser analisado para cadastrar notícias 😉</h2>';
     endif;
     ?>
 </body>
-
 </html>

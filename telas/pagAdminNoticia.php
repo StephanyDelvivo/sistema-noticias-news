@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,21 +8,15 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Notícias News</title>
 </head>
-
 <body>
     <?php
     require_once '../classes/Sistema.php';
     $sistema = new Sistema;
     include './cabecalho.php';
-    ?>
-    <?php
     $noticias = array_reverse($sistema->getNotic());
     foreach ($noticias as $noticia) :
     ?>
         <div class="noticia">
-            <?php
-            #if($noticia->getStatusNotic()===NULL):
-            ?>
             <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
                 <img src="<?= $noticia->getImgNoticia() ?>" />
             </a>
@@ -41,11 +34,9 @@
                 }
                 ?>
             </h4><br>
-
         </div>
     <?php
     endforeach;
     ?>
 </body>
-
 </html>

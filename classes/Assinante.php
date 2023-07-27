@@ -65,5 +65,4 @@ class Assinante
     {
         return $this->numCartao;
     }
-
 }

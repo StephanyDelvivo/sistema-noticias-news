@@ -1,8 +1,3 @@
-<?php
-    require_once '../classes/Sistema.php';
-    $sistema = new Sistema();
-    //session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,8 +10,10 @@
 </head>
 <body>
     <?php
-        include './cabecalho.php';
-        $erro = '';
+    require_once '../classes/Sistema.php';
+    $sistema = new Sistema();
+    include './cabecalho.php';
+    $erro = '';
     if(isset($_REQUEST['entrou'])){
         $cpf = $_REQUEST['cpf'];
         $email = $_REQUEST['email'];
@@ -57,10 +54,6 @@
             <p>Ainda não é cadastrado ? <a href="./formCadAssinante.php">Cadastre-se!</a></p>
         </form>
         <?php 
-        // $assinante = $sistema->getAss();
-        // $jornalista = $sistema->getJorn();
-        // var_dump($jornalista);
-        // var_dump($assinante);
         $erro;
         ?>
     </div>

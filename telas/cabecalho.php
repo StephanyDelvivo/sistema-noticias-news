@@ -2,14 +2,8 @@
     require_once '../classes/Sistema.php';
     $sistema = new Sistema();
     session_start();
-    /** para testes sem precisar de login*/
-    //$_SESSION = []; //apagar dados da sessao
-    //$_SESSION['usuario'] = 'Joao'; //nome
-    //$_SESSION['tipo'] = 'ass'; //'ass'inante; 'jor'nalista; 'adm'in;
     $dropdown;
     $usuarioLogado;
-    #function setLoginMenu(){
-        #var_dump($usuarioLogado);
         if(isset($_SESSION['cpf'])){
             if($_SESSION['tipo']==='ass'){
                 $usuarioLogado = $sistema->buscarAss($_SESSION['cpf']);
@@ -51,21 +45,11 @@
             }
         } else {
             $dropdown = '<div class="link-menu"><h2><a href="./formLogin.php">Entrar</a></h2></div>';
-                /*'<div class="drop-menu">'.
-                    '<a  href="#" class="drop-bt">Login</a>'.
-                    '<div class="drop-links">'.
-                        '<a href="#">Assinante</a>'.
-                        '<a href="#">Jornalista</a>'.
-                        '<a href="#">Administrador</a>'.
-                    '</div>'.      
-                    '</div>';*/
         }
-    #}
 ?>
 <header>
-        <h2><a href="./index.php">Noticias News</a></h2>
-        <nav>
-            <?=$dropdown?>
-        </nav>
-   
+    <h2><a href="./index.php">Noticias News</a></h2>
+    <nav>
+        <?=$dropdown?>
+    </nav>   
 </header>

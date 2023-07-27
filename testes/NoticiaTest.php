@@ -5,8 +5,10 @@
     require_once '../classes/Noticia.php';
     require_once '../classes/Comentario.php';
 
-    class NoticiaTest extends TestCase{
-        function testDeveriaRetornarVetorComentariosAposCadastrar(){
+    class NoticiaTest extends TestCase
+    {
+        function testDeveriaRetornarVetorComentariosAposCadastrar()
+        {
             $textoComent = 'gostei da noticia';
 
             $sistema = new Sistema();
@@ -21,7 +23,8 @@
             $this->assertCount($resultadoEsperado, $resultado);
         }
 
-        function testDeveriaRetornarBuscaComentario(){
+        function testDeveriaRetornarBuscaComentario()
+        {
             $textoComent = 'gostei da noticia';
 
             $sistema = new Sistema();
@@ -37,7 +40,8 @@
 
         }
 
-        function testDeveriaRetornarVetorComentariosAposDeletar(){
+        function testDeveriaRetornarVetorComentariosAposDeletar()
+        {
             $textoComent = 'gostei da noticia';
 
             $sistema = new Sistema();

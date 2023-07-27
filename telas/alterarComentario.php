@@ -9,7 +9,6 @@
     $noticia = $sistema->buscarNotic($codNoticia);
     $comentario = $noticia->buscarComent($codComent);
     $comentario->setTextoComent($textoComent);
-
 ?>
 <script>
     window.location.href = "./pagNoticia.php?codNoticia=<?=$noticia->getCodNoticia()?>";

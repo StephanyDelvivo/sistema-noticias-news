@@ -1,5 +1,4 @@
 <?php
-
 class Jornalista
 { 
     private $nome;
@@ -20,11 +19,6 @@ class Jornalista
         $this->noticias = [];
         $this->statusJorn = NULL;
     }
-
-    // function enviarNoticia($noticia)
-    // {
-            //talvez continue ou não
-    // }
 
     function setNome($nome)
     {
@@ -85,5 +79,4 @@ class Jornalista
     {    
         return $this->historico;
     }
-
 }

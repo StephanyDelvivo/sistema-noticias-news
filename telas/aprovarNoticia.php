@@ -12,7 +12,6 @@
     } else {
         $noticia->setStatusNotic($status);
     }
-
 ?>
 <script>
     window.location.href = "./pagAdminNoticia.php";

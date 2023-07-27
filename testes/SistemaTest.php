@@ -3,13 +3,12 @@
     require_once '../classes/Sistema.php';
     require_once '../classes/Jornalista.php';
 
-    class SistemaTest extends TestCase {
-
-
+    class SistemaTest extends TestCase 
+    {
         /////////jornalista//////////
 
-
-        function testDeveriaCadastrarJorn(){
+        function testDeveriaCadastrarJorn()
+        {
             $sistema = new Sistema();
             $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
             $contagem = count($sistema->getJorn());
@@ -20,7 +19,8 @@
             $this->assertCount($resultadoEsperado, $sistema->getJorn());
         }
 
-        function testDeveriaCadastrarJornRepitido(){
+        function testDeveriaCadastrarJornRepitido()
+        {
             $sistema = new Sistema();
             $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
             $sistema->cadastrarJorn($jornalista);
@@ -33,7 +33,8 @@
             $this->assertCount($resultadoEsperado, $sistema->getJorn());
         }
         
-        function testDeveriaRetornarBuscaJorn(){
+        function testDeveriaRetornarBuscaJorn()
+        {
             $sistema = new Sistema();
             $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
             $sistema->cadastrarJorn($jornalista);
@@ -44,7 +45,8 @@
             $this->assertEquals($resultadoEsperado, $resultado);
         }
 
-        function testDeveriaRetornarBuscaJornInexistente(){
+        function testDeveriaRetornarBuscaJornInexistente()
+        {
             $sistema = new Sistema();
             $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
             $sistema->cadastrarJorn($jornalista);
@@ -54,7 +56,8 @@
             $this->assertNull($resultado);
         }
 
-        function testDeveriaDeletarJorn(){
+        function testDeveriaDeletarJorn()
+        {
             $sistema = new Sistema();
             $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
             $sistema->cadastrarJorn($jornalista);
@@ -67,7 +70,8 @@
             $this->assertCount($resultadoEsperado, $sistema->getJorn());
         }
 
-        function testDeveriaDeletarJornInexistente(){
+        function testDeveriaDeletarJornInexistente()
+        {
             $sistema = new Sistema();
             $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
             $sistema->cadastrarJorn($jornalista);
@@ -80,11 +84,10 @@
             $this->assertCount($resultadoEsperado, $sistema->getJorn());
         }
 
-
-
         /////////assinante////////
 
-        function testDeveriaCadastrarAss(){
+        function testDeveriaCadastrarAss()
+        {
             $sistema = new Sistema();
             $assinante = new Assinante('Joao', '12345678900', 'joao@gmail.com', 'senha45', 'numCartao');
             $contagem = count($sistema->getAss());
@@ -95,7 +98,8 @@
             $this->assertCount($resultadoEsperado, $sistema->getAss());
         }
 
-        function testDeveriaCadastrarAssRepitido(){
+        function testDeveriaCadastrarAssRepitido()
+        {
             $sistema = new Sistema();
             $assinante = new Assinante('Joao', '12345678900', 'joao@gmail.com', 'senha45', 'numCartao');
             $sistema->cadastrarAss($assinante);
@@ -108,7 +112,8 @@
             $this->assertCount($resultadoEsperado, $sistema->getAss());
         }
         
-        function testDeveriaRetornarBuscaAss(){
+        function testDeveriaRetornarBuscaAss()
+        {
             $sistema = new Sistema();
             $assinante = new Assinante('Joao', '12345678900', 'joao@gmail.com', 'senha45', 'numCartao');
             $sistema->cadastrarAss($assinante);
@@ -118,7 +123,8 @@
             $this->assertEquals($resultadoEsperado, $resultado);
         }
 
-        function testDeveriaRetornarBuscaAssInexistente(){
+        function testDeveriaRetornarBuscaAssInexistente()
+        {
             $sistema = new Sistema();
             $assinante = new Assinante('Joao', '12345678900', 'joao@gmail.com', 'senha45', 'numCartao');
             $sistema->cadastrarAss($assinante);
@@ -128,7 +134,8 @@
             $this->assertNull($resultado);
         }
 
-        function testDeveriaDeletarAss(){
+        function testDeveriaDeletarAss()
+        {
             $sistema = new Sistema();
             $assinante = new Assinante('Joao', '12345678900', 'joao@gmail.com', 'senha45', 'numCartao');
             $sistema->cadastrarAss($assinante);
@@ -140,7 +147,8 @@
             $this->assertCount($resultadoEsperado, $sistema->getAss());
         }
 
-        function testDeveriaDeletarAssInexistente(){
+        function testDeveriaDeletarAssInexistente()
+        {
             $sistema = new Sistema();
             $assinante = new Assinante('Joao', '12345678900', 'joao@gmail.com', 'senha45', 'numCartao');
             $sistema->cadastrarAss($assinante);
@@ -154,7 +162,8 @@
 
     ////////////categorias///////////
 
-    function testDeveriaCadastrarCat(){
+    function testDeveriaCadastrarCat()
+    {
         $sistema = new Sistema();
         $categoria = new Categoria('Esportes');
         $contagem = count($sistema->getCat());
@@ -165,7 +174,8 @@
         $this->assertCount($resultadoEsperado, $sistema->getCat());
     }
     
-    function testDeveriaRetornarBuscaCat(){
+    function testDeveriaRetornarBuscaCat()
+    {
         $sistema = new Sistema();
         $categoria = new Categoria('Esportes');
         $sistema->cadastrarCat($categoria);
@@ -175,7 +185,8 @@
         $this->assertEquals($resultadoEsperado, $resultado);
     }
 
-    function testDeveriaRetornarBuscaCatInexistente(){
+    function testDeveriaRetornarBuscaCatInexistente()
+    {
         $sistema = new Sistema();
         $categoria = new Categoria('Esportes');
         $sistema->cadastrarCat($categoria);
@@ -185,7 +196,8 @@
         $this->assertNull($resultado);
     }
 
-    function testDeveriaDeletarCat(){
+    function testDeveriaDeletarCat()
+    {
         $sistema = new Sistema();
         $categoria = new Categoria('Esportes');
         $sistema->cadastrarCat($categoria);
@@ -197,7 +209,8 @@
         $this->assertCount($resultadoEsperado, $sistema->getCat());
     }
 
-    function testDeveriaDeletarCatInexistente(){
+    function testDeveriaDeletarCatInexistente()
+    {
         $sistema = new Sistema();
         $categoria = new Categoria('Esportes');
         $sistema->cadastrarCat($categoria);
@@ -212,7 +225,8 @@
 
     /////////noticias///////////
 
-    function testDeveriaCadastrarNotic(){
+    function testDeveriaCadastrarNotic()
+    {
         $sistema = new Sistema();
         $noticia = new Noticia('Titulo', 'texto', 'linkImagem');
         $contagem = count($sistema->getNotic());
@@ -223,7 +237,8 @@
         $this->assertCount($resultadoEsperado, $sistema->getNotic());
     }
     
-    function testDeveriaRetornarBuscaNotic(){
+    function testDeveriaRetornarBuscaNotic()
+    {
         $sistema = new Sistema();
         $noticia = new Noticia('Titulo', 'texto', 'linkImagem');
         $sistema->cadastrarNotic($noticia);
@@ -234,7 +249,8 @@
         $this->assertEquals($resultadoEsperado, $resultado);
     }
 
-    function testDeveriaRetornarBuscaNoticInexistente(){
+    function testDeveriaRetornarBuscaNoticInexistente()
+    {
         $sistema = new Sistema();
         $noticia = new Noticia('Titulo', 'texto', 'linkImagem');
         $sistema->cadastrarNotic($noticia);
@@ -245,7 +261,8 @@
         $this->assertNull($resultado);
     }
 
-    function testDeveriaDeletarNotic(){
+    function testDeveriaDeletarNotic()
+    {
         $sistema = new Sistema();
         $noticia = new Noticia('Titulo', 'texto', 'linkImagem');
         $sistema->cadastrarNotic($noticia);
@@ -258,7 +275,8 @@
         $this->assertCount($resultadoEsperado, $sistema->getNotic());
     }
 
-    function testDeveriaDeletarNoticInexistente(){
+    function testDeveriaDeletarNoticInexistente()
+    {
         $sistema = new Sistema();
         $noticia = new Noticia('Titulo', 'texto', 'linkImagem');
         $sistema->cadastrarNotic($noticia);
@@ -271,7 +289,8 @@
         $this->assertCount($resultadoEsperado, $sistema->getNotic());
     }
 
-    function testDeveriaRetornarBuscaNoticPorCat(){
+    function testDeveriaRetornarBuscaNoticPorCat()
+    {
         $sistema = new Sistema();
         $noticia = new Noticia('Titulo', 'texto', 'linkImagem');
         $categoria = new Categoria('Esportes');
@@ -285,7 +304,8 @@
         $this->assertCount($resultadoEsperado, $sistema->buscarNoticiasPorCat($categoria->getCodCateg()));
     }
 
-    function testDeveriaRetornarBuscaNoticPorJorn(){
+    function testDeveriaRetornarBuscaNoticPorJorn()
+    {
         $sistema = new Sistema();
         $noticia = new Noticia('Titulo', 'texto', 'linkImagem');
         $jornalista = new Jornalista('Jose', '12345678901', 'jose@gmail.com', 'senha45', 'historicoLInk');
@@ -299,12 +319,14 @@
         $this->assertCount($resultadoEsperado, $sistema->buscarNoticiasPorJorn($jornalista->getCpf()));
     }
 
-    function testDeveriaRetornarBuscaAdmin(){
+    function testDeveriaRetornarBuscaAdmin()
+    {
         $sistema = new Sistema();
         $this->assertNotNull($sistema->buscarAdmin('00000000000'));
     }
 
-    function testDeveriaRetornarBuscaAdminInexistente(){
+    function testDeveriaRetornarBuscaAdminInexistente()
+    {
         $sistema = new Sistema();
         $this->assertNull($sistema->buscarAdmin('-1'));
     }

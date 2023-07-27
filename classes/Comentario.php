@@ -1,5 +1,4 @@
 <?php
-
 class Comentario
 {   
     private $autor; 
@@ -42,5 +41,4 @@ class Comentario
     {
         return $this->codComent;
     }
-
 }

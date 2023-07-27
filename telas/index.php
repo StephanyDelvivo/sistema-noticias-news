@@ -8,14 +8,11 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Notícias News</title>
 </head>
-
 <body>
     <?php
     require_once '../classes/Sistema.php';
     $sistema = new Sistema;
     include './cabecalho.php';
-    ?>
-    <?php
     $noticias = $sistema->getNotic();
     $categorias = $sistema->getCat();
     foreach ($categorias as $categoria):
@@ -25,25 +22,24 @@
             <a href="./pagNoticiaPorCateg.php?codCateg=<?= $categoria->getCodCateg()?>"><?= $categoria->getNome()?> --></a>
         </h3>
         <?php
-            $noticias = $sistema->buscarNoticiasPorCat($categoria->getCodCateg());
-            foreach ($noticias as $noticia):
-                if($noticia->getStatusNotic()=='Aprovada'):
+        $noticias = $sistema->buscarNoticiasPorCat($categoria->getCodCateg());
+        foreach ($noticias as $noticia):
+            if($noticia->getStatusNotic()=='Aprovada'):
         ?>
-        <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
-            <img src="<?= $noticia->getImgNoticia() ?>" />
-        </a>
-        <h4>
-            <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?=$noticia->getPremium()? '⭐ ':''?><?= $noticia->getTitulo() ?></a>
-        </h4><br>
+                <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>">
+                    <img src="<?= $noticia->getImgNoticia() ?>" />
+                </a>
+                <h4>
+                    <a href="./pagNoticia.php?codNoticia=<?= $noticia->getCodNoticia() ?>"><?=$noticia->getPremium()? '⭐ ':''?><?= $noticia->getTitulo() ?></a>
+                </h4><br>
         <?php
             endif;
-            endforeach;
+        endforeach;
         ?>
     </div>
     <?php 
-        endforeach;
-        include './rodape.php';
+    endforeach;
+    include './rodape.php';
     ?> 
 </body>
-
 </html>
