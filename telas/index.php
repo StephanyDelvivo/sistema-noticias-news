@@ -40,6 +40,7 @@
     <?php 
     endforeach;
     include './rodape.php';
+    #teste de commit;
     ?> 
 </body>
 </html>
